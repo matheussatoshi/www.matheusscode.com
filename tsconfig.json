@@ -1,13 +1,15 @@
 {
   "compilerOptions": {
+    "target": "ES2017",
     "lib": ["dom", "dom.iterable", "esnext"],
+    "types": ["vitest/globals", "vitest/jsdom"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
     "noEmit": true,
     "esModuleInterop": true,
     "module": "esnext",
-    "moduleResolution": "bundler",
+    "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
@@ -18,11 +20,18 @@
       }
     ],
     "paths": {
-      "@/*": ["./*"],
-      "@/utils/*": ["./packages/utils/*"],
-      "@/components/*": ["./packages/components/*"],
+      "@/*": ["./src/*"],
+      "@/public/*": ["./public/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": [
+    "next-env.d.ts",
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "interfaces/*.ts",
+    ".next/types/**/*.ts",
+    "next.config.js",
+    "tests/vitest.setup.ts"
+  ],
   "exclude": ["node_modules"]
 }
