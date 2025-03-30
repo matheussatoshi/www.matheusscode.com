@@ -1,12 +1,18 @@
 /** @type {import('next').NextConfig} */
 const config = {
- reactStrictMode: false,
+  reactStrictMode: false,
   experimental: {
-    optimizePackageImports: [
-      "framer-motion",
-    ],
+    optimizePackageImports: ["framer-motion"],
   },
   images: {
+    domains: [
+      "upload.wikimedia.org",
+      "ream.com.br",
+      "atem.com.br",
+      "seeklogo.com",
+      "img.icons8.com",
+      "static-00.iconduck.com",
+    ],
     remotePatterns: [
       {
         protocol: "https",
