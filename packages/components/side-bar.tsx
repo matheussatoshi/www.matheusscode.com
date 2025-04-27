@@ -32,12 +32,9 @@ export const SideBar = ({
         <aside {...props} className={cn("h-full", className)}>
           <div className="min-h-full w-full text-sm">
             {children}
-            {/* <div className="flex items-center space-y-4 justify-center flex-col">
-            <NewsletterCard className="mt-6" />
-            <span className="mt-2 text-center text-muted-foreground">
-              Made with love ❤️
-            </span>
-          </div> */}
+            {/* <div className="mt-auto flex flex-col items-center justify-center space-y-4">
+              <NewsletterCard className="mt-6" />
+            </div> */}
           </div>
         </aside>
       </ScrollArea>

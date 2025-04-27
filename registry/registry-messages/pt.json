@@ -3,6 +3,8 @@
     "main_title": "Bem-vindo",
     "about_title": "Sobre mim.",
     "about_description": "Olá 👋, meu nome é Matheus, que significa algo próximo a \"Presente dado por Deus\" em português. Casado, pai de um pequeno anjo, Engenheiro de Software, músico, apaixonado por ensinar e minimalista, que mora na cidade de Manaus - Amazonas, Brasil.",
+    "latest_projects_title": "Último projetos",
+    "latest_post_title": "Último Post",
     "work_title": "Trabalhos anteriores.",
     "link_title_github": "Abrir projeto no Github",
     "image_alt_github": "Banner com fundo branco destacando a frase 'www.matheusscode.com' e a descrição: 'Siga minha jornada como Engenheiro de Software e Arquiteto. Explore meus projetos pessoais e postagens no blog.",
@@ -126,6 +128,7 @@
   },
   "globals": {
     "loading": "Carregando...",
-    "donwload": "Baixar"
+    "donwload": "Baixar",
+    "coming_soon": "Em breve..."
   }
 }

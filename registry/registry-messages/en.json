@@ -4,6 +4,8 @@
     "about_title": "About me.",
     "about_description": "Hello 👋, my name is Matheus, which means something close to \"Gift given by God\" in Portuguese. Married, father of a little angel, Software Engineer, musician, passionate about teaching and minimalist, and who lives in the city of Manaus - Amazonas, Brazil.",
     "work_title": "Previous work.",
+    "latest_project_title": "Latest project",
+    "latest_post_title": "Latest Post",
     "link_title_github": "Open project in Github",
     "image_alt_github": "Banner with a white background highlighting the phrase 'www.matheusscode.com' and the description: 'Follow my journey as a Software Engineer and Architect. Explore my personal projects and blog posts.'",
     "congratulations": "I worked on them all with all the affection and gratitude in the world.",
@@ -126,6 +128,7 @@
   },
   "globals": {
     "loading": "Loading...",
-    "donwload": "Donwload"
+    "donwload": "Donwload",
+    "coming_soon": "Coming Soon..."
   }
 }

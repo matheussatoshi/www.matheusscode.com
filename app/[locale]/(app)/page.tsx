@@ -31,6 +31,7 @@ export const metadata = constructMetadata({
 export default async function Page({ params: { locale } }: Props) {
   const repos: GithubRepository[] = await getRepos();
   const t = await getTranslations({ locale, namespace: "welcome" });
+  const tg = await getTranslations({ locale, namespace: "globals" });
   unstable_setRequestLocale(locale);
 
   return (
@@ -72,7 +73,7 @@ export default async function Page({ params: { locale } }: Props) {
           <Transmutation transition={transitions.slideToLeft}>
             <div className="flex flex-col gap-4">
               <h2 className="font-sans text-lg font-medium tracking-tight">
-                Latest project
+                {t("latest_project_title")}
               </h2>
               <GithubRepositoryCard repo={repos[0]} />
             </div>
@@ -83,10 +84,10 @@ export default async function Page({ params: { locale } }: Props) {
           >
             <div className="flex h-full flex-col gap-4">
               <h2 className="font-sans text-lg font-medium tracking-tight">
-                Latest post
+                {t("latest_post_title")}
               </h2>
-              <div className="flex h-[144px] w-full select-none items-center justify-center rounded-md border border-input bg-muted-foreground/15">
-                <span className="text-primary/80">Coming soon...</span>
+              <div className="flex h-[144px] w-full select-none items-center justify-center rounded-md border border-input bg-muted-foreground/15 lg:h-full lg:flex-1">
+                <span className="text-primary/80">{tg("coming_soon")}</span>
               </div>
             </div>
           </Transmutation>
