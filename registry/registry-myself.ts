@@ -1,7 +1,7 @@
 import { USERNAME } from "./registry-main";
 
 export const registry_myself = {
-  username: USERNAME,
+  username: USERNAME || "matheussatoshi",
   alt_username: "devmatolo",
   full_name: "Matheus Figueiredo",
   short_loading: "...",
