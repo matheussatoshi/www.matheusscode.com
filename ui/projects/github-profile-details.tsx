@@ -34,39 +34,32 @@ export const GithubProfileDetails = ({ user }: GithubProfileDetailsProps) => {
           <Transmutation transition={transitions.reveal}>
             <div className="flex flex-row items-center gap-2 laptop:flex-col laptop:items-start laptop:gap-0">
               <h1 className="text-xl font-medium text-primary dark:text-primary">
-                {user?.name || registry_myself.full_name}
+                {user?.name}
                 {" - "}
                 <span className="text-base font-light tracking-normal text-primary/80 dark:text-primary/80">
-                  ({user?.login || registry_myself.username})
+                  ({user?.login})
                 </span>
               </h1>
             </div>
           </Transmutation>
           <Transmutation transition={transitions.reveal}>
-            <p className="my-0 text-sm text-primary/80">
-              {user?.location || registry_myself.short_loading}
-            </p>
+            <p className="my-0 text-sm text-primary/80">{user?.location}</p>
             <em className="mt-0 text-sm text-muted-foreground/90 dark:text-muted-foreground laptop:my-2">
-              &quot;{user?.bio || registry_myself.short_loading}
+              &quot;{user?.bio}
               .&quot;
             </em>
           </Transmutation>
           <Transmutation transition={transitions.reveal}>
             <span className="block text-end text-sm text-muted-foreground laptop:hidden laptop:text-start">
               Actual Company:{" "}
-              <span className="text-primary">
-                {user?.company || registry_myself.short_loading}
-              </span>
+              <span className="text-primary">{user?.company}</span>
             </span>
           </Transmutation>
         </div>
       </div>
       <div className="absolute bottom-2 right-8 hidden laptop:block">
         <span className="text-sm text-muted-foreground">
-          Actual Company:{" "}
-          <span className="text-primary">
-            {user?.company || registry_myself.short_loading}
-          </span>
+          Actual Company: <span className="text-primary">{user?.company}</span>
         </span>
       </div>
       <Transmutation className="h-full w-full" transition={transitions.reveal}>

@@ -1,8 +1,10 @@
 "use server";
 
+import { USERNAME } from "@/registry/registry-main";
+
 export async function getRepos() {
   const response = await fetch(
-    "https://api.github.com/users/matheusscode/repos",
+    `https://api.github.com/users/${USERNAME}/repos`,
     {
       cache: "force-cache",
     },
@@ -17,7 +19,7 @@ export async function getRepos() {
 }
 
 export async function getProfile() {
-  const response = await fetch("https://api.github.com/users/matheusscode");
+  const response = await fetch(`https://api.github.com/users/${USERNAME}`);
 
   const data = await response.json();
 
@@ -26,7 +28,7 @@ export async function getProfile() {
 
 export async function getGist() {
   const response = await fetch(
-    "https://gist.githubusercontent.com/matheusscode/ec8e9d67facc5d4c317bb36211081a79/raw/a832f534f4a473909481776850644eb176fa9d99/settings.json",
+    `https://gist.githubusercontent.com/${USERNAME}/ec8e9d67facc5d4c317bb36211081a79/raw/a832f534f4a473909481776850644eb176fa9d99/settings.json`,
     {
       cache: "force-cache",
     },

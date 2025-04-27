@@ -33,7 +33,7 @@ export const JourneyPostCard = ({
           <img
             src={content.media}
             alt={content.title!}
-            className="h-full w-full rounded-xl object-cover"
+            className="h-full max-h-[600px] w-full rounded-xl object-cover"
           />
         </div>
       )}
