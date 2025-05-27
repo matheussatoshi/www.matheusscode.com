@@ -1,15 +1,17 @@
 "use client";
 
 import Lottie, { LottieRefCurrentProps } from "lottie-react";
-import youtubeIcon from "@/public/static/youtube.json";
 import { Link } from "@/components/ui/link";
 import React from "react";
 import { cn } from "@/lib/cn";
 
-export function LottieYoutube({
+export function LottieIcon({
   className,
+  animationData,
   ...props
-}: React.ComponentProps<"a">) {
+}: React.ComponentProps<"a"> & {
+  animationData: unknown;
+}) {
   const ref = React.useRef<LottieRefCurrentProps | null>(null);
 
   return (
@@ -23,10 +25,10 @@ export function LottieYoutube({
     >
       <Lottie
         lottieRef={ref}
-        animationData={youtubeIcon}
+        animationData={animationData}
         loop={false}
         autoplay={false}
-        className="size-8 text-primary"
+        className="size-8"
       />
     </Link>
   );

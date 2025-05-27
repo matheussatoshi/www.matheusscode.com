@@ -1,8 +1,8 @@
-import { LottieGithub } from "@/ui/shared/lottie/lottie-github";
-import { LottieInstagram } from "@/ui/shared/lottie/lottie-instagram";
-import { LottieLinkedin } from "@/ui/shared/lottie/lottie-linkedin";
-import { LottieX } from "@/ui/shared/lottie/lottie-x";
-import { LottieYoutube } from "@/ui/shared/lottie/lottie-youtube";
+import githubAnimationIcon from '@/public/static/github.json'
+import instagramAnimationIcon from '@/public/static/instagram.json'
+import linkedinAnimationIcon from '@/public/static/linkedin.json'
+import xAnimationIcon from '@/public/static/x.json'
+import youtubeAnimationIcon from '@/public/static/youtube.json'
 
 export const mimic = {
   socialLinks: [
@@ -10,31 +10,31 @@ export const mimic = {
       id: 1,
       name: "Github",
       href: "https://github.com/matheussfigueiredo",
-      element: LottieGithub,
+      animationData: githubAnimationIcon,
     },
     {
       id: 2,
       name: "Linkedin",
       href: "https://www.linkedin.com/in/matheussfigueiredo/",
-      element: LottieLinkedin,
+      animationData: linkedinAnimationIcon,
     },
     {
       id: 3,
       name: "Youtube",
       href: "https://www.youtube.com/@letmatcode",
-      element: LottieYoutube,
+      animationData: youtubeAnimationIcon,
     },
     {
       id: 4,
       name: "X",
       href: "https://x.com/letmat_code",
-      element: LottieX,
+      animationData: xAnimationIcon,
     },
     {
       id: 5,
       name: "Instagram",
       href: "https://www.instagram.com/letmat.code/",
-      element: LottieInstagram,
+      animationData: instagramAnimationIcon,
     },
   ],
 };

@@ -1,6 +1,7 @@
 import { Link } from "@/components/ui/link";
 import { copyright } from "@/utils/functions/copyright";
 import { mimic } from "@/lib/mimic";
+import { LottieIcon } from "../shared/lottie-icon";
 
 export function AppFooter() {
   return (
@@ -22,10 +23,13 @@ export function AppFooter() {
 
           <ul className="flex items-center gap-0.5">
             {mimic.socialLinks.map((link) => {
-              const LottieIcon = link.element;
               return (
                 <li key={link.id} className="pt-1">
-                  <LottieIcon title={link.name} href={link.href} />
+                  <LottieIcon
+                    animationData={link.animationData}
+                    title={link.name}
+                    href={link.href}
+                  />
                 </li>
               );
             })}
