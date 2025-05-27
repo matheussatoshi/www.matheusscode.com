@@ -1,7 +1,6 @@
 import { Link } from "@/components/ui/link";
 import { copyright } from "@/utils/functions/copyright";
 import { mimic } from "@/lib/mimic";
-import { LottieIcon } from "../shared/lottie-icon";
 
 export function AppFooter() {
   return (
