@@ -26,7 +26,8 @@
       "@/actions/*": ["./actions/*"],
       "@/utils/*": ["./src/utils/*"],
       "@/components/*": ["./src/components/*"],
-      "@/interfaces/*": ["./interfaces/*"]
+      "@/interfaces/*": ["./interfaces/*"],
+      "@/public/*": ["./public/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
