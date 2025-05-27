@@ -1,23 +1,11 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 
-import { useAnimate, stagger, motion } from "motion/react";
+import { motion, stagger, useAnimate } from "motion/react";
 
-import {
-  LayoutGridIcon,
-  TrashIcon,
-  Building2,
-  UserCircleIcon,
-  SettingsIcon,
-  ChevronRightIcon,
-  BellIcon,
-  SunIcon,
-  MoonIcon,
-  SunMoonIcon,
-  CheckIcon,
-} from "lucide-react";
 import { cn } from "@/lib/cn";
+import { MoonIcon, SunIcon, SunMoonIcon } from "lucide-react";
 import { useTheme } from "next-themes";
 
 function useMenuAnimation(isOpen: boolean) {
@@ -39,7 +27,7 @@ function useMenuAnimation(isOpen: boolean) {
         type: "spring",
         bounce: 0,
         duration: 0.5,
-      }
+      },
     );
 
     animate(
@@ -50,7 +38,7 @@ function useMenuAnimation(isOpen: boolean) {
       {
         duration: 0.2,
         delay: isOpen ? staggerMenuItems : 0,
-      }
+      },
     );
   }, [isOpen, animate, staggerMenuItems]);
 
@@ -97,8 +85,8 @@ export function ModeToggle({
       <motion.button
         whileTap={{ scale: 0.97 }}
         className={cn(
-          "flex w-auto items-center justify-between rounded-sm borderbg-neutral-50 px-2 h-7",
-          "bg-accent"
+          "borderbg-neutral-50 flex h-7 w-auto items-center justify-between rounded-sm px-2",
+          "bg-accent",
         )}
         onClick={() => setIsOpen((prevState) => !prevState)}
       >
@@ -108,8 +96,8 @@ export function ModeToggle({
       </motion.button>
       <ul
         className={cn(
-          "absolute mt-2 z-10 overflow-hidden mx-auto flex w-full max-w-[130px] flex-col rounded-xl border border-border px-1.5 py-2.5",
-          isOpen ? "pointer-events-auto" : "pointer-events-none"
+          "border-border absolute z-10 mx-auto mt-2 flex w-full max-w-[130px] flex-col overflow-hidden rounded-xl border px-1.5 py-2.5",
+          isOpen ? "pointer-events-auto" : "pointer-events-none",
         )}
       >
         {items.map(({ icon, onClick, name }, idx) => (
@@ -117,10 +105,10 @@ export function ModeToggle({
             <button
               onClick={onClick}
               className={cn(
-                "group flex w-full text-muted-foreground font-normal items-center rounded-sm border border-transparent",
-                "focus-visible:outline-none py-1 transition-colors select-none px-1.5 gap-1.5",
+                "group text-muted-foreground flex w-full items-center rounded-sm border border-transparent font-normal",
+                "gap-1.5 px-1.5 py-1 transition-colors select-none focus-visible:outline-none",
                 theme === name.toLowerCase() &&
-                  "text-primary font-medium bg-accent"
+                  "text-primary bg-accent font-medium",
               )}
             >
               {icon}

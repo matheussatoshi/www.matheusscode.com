@@ -129,4 +129,8 @@
   body {
     @apply bg-background text-foreground text-xs md:text-sm;
   }
+
+  br {
+    @apply hidden md:block;
+  }
 }
