@@ -21,15 +21,19 @@ export function AppFooter() {
         <div className="flex flex-col lg:flex-row items-center space-y-4 mt-4 lg:mt-0 lg:space-y-0 lg:gap-2.5 ml-0 lg:ml-auto">
           <Link>Agende uma reunião</Link>
 
-          <ul className="flex items-center gap-0.5">
+          <ul className="flex items-center gap-1.5">
             {mimic.socialLinks.map((link) => {
               return (
                 <li key={link.id} className="pt-1">
-                  <LottieIcon
-                    animationData={link.animationData}
+                  <Link
+                    variant="ghost"
+                    size="icon"
+                    className="hover:bg-accent/35 transition-all"
                     title={link.name}
                     href={link.href}
-                  />
+                  >
+                    <link.icon size={24} />
+                  </Link>
                 </li>
               );
             })}

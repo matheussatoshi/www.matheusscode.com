@@ -1,8 +1,10 @@
-import githubAnimationIcon from '@/public/static/github.json'
-import instagramAnimationIcon from '@/public/static/instagram.json'
-import linkedinAnimationIcon from '@/public/static/linkedin.json'
-import xAnimationIcon from '@/public/static/x.json'
-import youtubeAnimationIcon from '@/public/static/youtube.json'
+import {
+  GithubIcon,
+  InstagramIcon,
+  LinkedinIcon,
+  XIcon,
+  YoutubeIcon,
+} from "lucide-react";
 
 export const mimic = {
   socialLinks: [
@@ -10,31 +12,58 @@ export const mimic = {
       id: 1,
       name: "Github",
       href: "https://github.com/matheussfigueiredo",
-      animationData: githubAnimationIcon,
+      icon: GithubIcon,
     },
     {
       id: 2,
       name: "Linkedin",
       href: "https://www.linkedin.com/in/matheussfigueiredo/",
-      animationData: linkedinAnimationIcon,
+      icon: LinkedinIcon,
     },
     {
       id: 3,
       name: "Youtube",
       href: "https://www.youtube.com/@letmatcode",
-      animationData: youtubeAnimationIcon,
+      icon: YoutubeIcon,
     },
     {
       id: 4,
       name: "X",
       href: "https://x.com/letmat_code",
-      animationData: xAnimationIcon,
+      icon: XIcon,
     },
     {
       id: 5,
       name: "Instagram",
       href: "https://www.instagram.com/letmat.code/",
-      animationData: instagramAnimationIcon,
+      icon: InstagramIcon,
+    },
+  ],
+  navigationLinks: [
+    {
+      id: 1,
+      label: "Home",
+      href: "/",
+    },
+    {
+      id: 2,
+      label: "Articles",
+      href: "/",
+    },
+    {
+      id: 3,
+      label: "Portfolio",
+      href: "/",
+    },
+    {
+      id: 4,
+      label: "Side Projects",
+      href: "/",
+    },
+    {
+      id: 5,
+      label: "About",
+      href: "/",
     },
   ],
 };

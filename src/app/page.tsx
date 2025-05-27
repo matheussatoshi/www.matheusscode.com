@@ -1,8 +1,5 @@
-
 export default function Home() {
   return (
-    <div className="flex flex-col max-w-xs mx-auto justify-center items-center h-screen gap-2">
-     
-    </div>
+    <div className="flex flex-col mx-auto justify-center items-center h-screen gap-2 max-w-4xl"></div>
   );
 }
