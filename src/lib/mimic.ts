@@ -47,7 +47,7 @@ export const mimic = {
     },
     {
       id: 2,
-      label: "Articles",
+      label: "About",
       href: "/",
     },
     {
@@ -57,12 +57,12 @@ export const mimic = {
     },
     {
       id: 4,
-      label: "Side Projects",
+      label: "Articles",
       href: "/",
     },
     {
       id: 5,
-      label: "About",
+      label: "Side Projects",
       href: "/",
     },
   ],

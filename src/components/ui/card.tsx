@@ -9,7 +9,7 @@ function Card({ className, ...props }: React.ComponentProps<"div">) {
       data-slot="card"
       className={cn(
         "bg-card text-card-foreground flex flex-col gap-2 rounded-xl border p-6",
-        className
+        className,
       )}
       {...props}
     />
@@ -29,7 +29,7 @@ function CardHeader({ className, ...props }: React.ComponentProps<"div">) {
       data-slot="card-header"
       className={cn(
         "@container/card-header grid auto-rows-min grid-rows-[auto_auto] items-start gap-1.5 px-6 has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-6",
-        className
+        className,
       )}
       {...props}
     />
@@ -40,7 +40,7 @@ function CardTitle({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
       data-slot="card-title"
-      className={cn("leading-none text-2xl font-bold", className)}
+      className={cn("text-2xl leading-none font-bold", className)}
       {...props}
     />
   );
@@ -60,7 +60,7 @@ function CardLabel({ className, ...props }: React.ComponentProps<"span">) {
   return (
     <span
       data-slot="card-description"
-      className={cn("text-muted-foreground font-light text-xs", className)}
+      className={cn("text-muted-foreground text-xs font-normal", className)}
       {...props}
     />
   );
@@ -72,7 +72,7 @@ function CardAction({ className, ...props }: React.ComponentProps<"div">) {
       data-slot="card-action"
       className={cn(
         "col-start-2 row-span-2 row-start-1 self-start justify-self-end",
-        className
+        className,
       )}
       {...props}
     />
@@ -101,12 +101,12 @@ function CardFooter({ className, ...props }: React.ComponentProps<"div">) {
 
 export {
   Card,
-  CardHeader,
-  CardFooter,
-  CardTitle,
   CardAction,
-  CardDescription,
   CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
   CardImage,
   CardLabel as CardSpan,
+  CardTitle,
 };
