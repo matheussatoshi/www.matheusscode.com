@@ -7,7 +7,7 @@ export function MainLayout({
   return (
     <main
       className={cn(
-        "mt-12 mb-12 flex min-h-screen w-full flex-col space-y-8 px-4 md:mt-44",
+        "mt-12 mb-12 flex min-h-screen w-full flex-col space-y-14 px-4 md:mt-44",
         className,
       )}
       {...props}
