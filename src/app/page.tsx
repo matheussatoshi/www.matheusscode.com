@@ -1,5 +1,4 @@
 import { AvatarCircles } from "@/components/magicui/avatar-circles";
-import { BorderBeam } from "@/components/magicui/border-beam";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import {
@@ -80,6 +79,8 @@ export default function Home() {
         </div>
       </Section>
 
+      <br />
+
       <Section>
         <p className="text-center text-lg font-medium md:text-left md:text-2xl">
           “👋🏼 Hi there — I&apos;m a software developer and designer based in
@@ -92,6 +93,8 @@ export default function Home() {
           ”
         </p>
       </Section>
+
+      <br />
 
       <Section className="relative flex items-start">
         <div className="flex w-full flex-col">
@@ -122,7 +125,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="hover:bg-muted/50 bg-background border-border relative h-48 w-full max-w-[14rem] -translate-x-4 -translate-y-6 overflow-hidden rounded-md border text-xs backdrop-blur-2xl transition-all select-none hover:shadow-xs">
+        <div className="hover:bg-muted/50 bg-background border-border relative hidden h-48 w-full max-w-[14rem] -translate-x-4 -translate-y-6 flex-col overflow-hidden rounded-md border text-xs backdrop-blur-2xl transition-all select-none hover:shadow-xs md:flex">
           <div className="bg-accent/50 flex items-center justify-between px-4 py-2">
             <h1 className="text-xs font-medium">Projects</h1>
             <Button className="h-6 gap-1 rounded-sm !px-1.5 font-normal">
@@ -148,7 +151,7 @@ export default function Home() {
           <div className="from-background pointer-events-none absolute inset-x-0 bottom-0 h-1/4 bg-gradient-to-t"></div>
         </div>
 
-        <div className="group hover:bg-muted/50 bg-background border-border absolute right-0 bottom-0 flex w-full max-w-[13rem] translate-y-10 flex-col rounded-md border px-2.5 pt-2 text-xs backdrop-blur-2xl transition-all select-none hover:shadow-xs">
+        <div className="group hover:bg-muted/50 bg-background border-border absolute right-0 bottom-0 hidden w-full max-w-[13rem] translate-y-10 flex-col rounded-md border px-2.5 pt-2 text-xs backdrop-blur-2xl transition-all select-none hover:shadow-xs md:flex">
           <div className="flex gap-2">
             <img
               src="https://avatars.githubusercontent.com/u/99546472?v=4"
@@ -185,7 +188,7 @@ export default function Home() {
             <BookmarkIcon size={13} className="hover:text-primary" />
             <SkipBackIcon size={13} className="hover:text-primary" />
             <RotateCcwIcon size={13} className="hover:text-primary" />
-            <div className="bg-background hover:text-primary group-hover:bg-muted border-border flex size-6 scale-150 items-center justify-center rounded-full border p-2 transition-all">
+            <div className="bg-background hover:text-primary group-hover:bg-muted border-border flex size-6 translate-y-0.5 scale-150 items-center justify-center rounded-full border p-2 transition-all">
               <span className="text-[10px] font-bold">||</span>
             </div>
             <RotateCwIcon size={13} className="hover:text-primary" />
@@ -196,9 +199,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="bg-background absolute right-0 -z-1 h-40 w-full max-w-[13rem] -translate-x-2.5 translate-y-14 rounded-md border border-dashed p-2 text-xs">
-          <BorderBeam duration={4} size={100} />
-        </div>
+        <div className="bg-accent/50 absolute right-0 -z-1 hidden h-40 w-full max-w-[13rem] -translate-x-2.5 translate-y-14 overflow-hidden rounded-md border-2 border-dashed p-2 text-xs md:flex" />
       </Section>
 
       <br />
@@ -241,48 +242,6 @@ export default function Home() {
         </div>
 
         <Link className="mx-auto mt-12"> View Full Portfolio </Link>
-      </Section>
-
-      <br />
-
-      <Section className="flex flex-col">
-        <div className="relative mb-14 flex items-center gap-7">
-          <div className="flex flex-col space-y-2 text-wrap md:text-nowrap">
-            <h1 className="text-xl font-bold">Side Projects</h1>
-            <p className="text-muted-foreground">
-              Dive into my latest side projects and explore <br /> the
-              cutting-edge tools, frameworks, and <br /> techniques I&apos;ve
-              used to bring these ideas to life.
-            </p>
-          </div>
-          <Separator className="hidden flex-1 md:block" />
-        </div>
-
-        <div className="grid w-full grid-cols-1 grid-rows-1 gap-7 md:grid-cols-2">
-          {[1, 2, 3, 4].map((item) => (
-            <Card
-              key={item}
-              className="group/project gap-3 border-none bg-transparent p-0"
-            >
-              <div className="relative h-40 w-full overflow-hidden rounded-xl">
-                <CardImage
-                  src="https://github.com/user-attachments/assets/4cc1ef02-e07f-471f-9385-cc2854854d84"
-                  alt="Matheus Figueiredo Website Banner"
-                  fill
-                  className="object-cover transition-all duration-400 group-hover/project:scale-105"
-                />
-              </div>
-              <CardTitle className="text-sm font-medium">
-                {truncate(
-                  "Trust Center: A Micro Frontend Solution for Compliance and Customer Engagement",
-                  70,
-                )}
-              </CardTitle>
-            </Card>
-          ))}
-        </div>
-
-        <Link className="mx-auto mt-12"> View All Side Projects </Link>
       </Section>
 
       <br />
