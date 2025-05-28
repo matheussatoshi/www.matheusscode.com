@@ -60,10 +60,5 @@ export const mimic = {
       label: "Articles",
       href: "/",
     },
-    {
-      id: 5,
-      label: "Side Projects",
-      href: "/",
-    },
   ],
 };
