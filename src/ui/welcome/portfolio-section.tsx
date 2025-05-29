@@ -1,9 +1,12 @@
+import { Repository } from "@/actions/github/namespace";
 import { Link } from "@/components/ui/link";
-import { Separator } from "@radix-ui/react-separator";
 import { Section } from "../layout/section";
 import { ProjectCard } from "../shared/project-card";
+import { Separator } from "@/components/ui/separator";
 
-export function PortfolioSection() {
+export function PortfolioSection({ data: repos }: { data: Repository[] }) {
+  console.log(JSON.stringify(repos[0], null, 2));
+
   return (
     <Section className="flex flex-col">
       <div className="relative mb-14 flex items-center gap-7">
@@ -19,12 +22,18 @@ export function PortfolioSection() {
       </div>
 
       <div className="grid w-full grid-cols-1 grid-rows-1 gap-7 md:grid-cols-2">
-        {[1, 2, 3, 4].map((item) => (
-          <ProjectCard key={item} />
-        ))}
+        {repos &&
+          repos
+            .splice(0, 4)
+            .map((item) => <ProjectCard key={item.id} data={item} />)}
       </div>
 
-      <Link className="mx-auto mt-12"> View Full Portfolio </Link>
+      <Link
+        href="https://github.com/matheussfigueiredo?tab=repositories"
+        className="mx-auto mt-12"
+      >
+        View Full Portfolio
+      </Link>
     </Section>
   );
 }

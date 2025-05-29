@@ -1,24 +1,24 @@
 import { Link } from "@/components/ui/link";
-import { copyright } from "@/utils/functions/copyright";
 import { mimic } from "@/lib/mimic";
+import { copyright } from "@/utils/functions/copyright";
 
 export function AppFooter() {
   return (
-    <footer className="w-full sm:mt-20 border-t border-border">
-      <div className="container flex flex-col justify-center lg:justify-normal lg:flex-row w-full items-center py-8 mx-auto px-7 max-w-7xl">
+    <footer className="border-border w-full border-t sm:mt-20">
+      <div className="container mx-auto flex w-full max-w-7xl flex-col items-center justify-center px-7 py-8 lg:flex-row lg:justify-normal">
         <Link
           href="/"
-          className="h-5 !p-0 hover:bg-transparent bg-transparent text-base group relative z-30 items-center !gap-0 space-x-1.5 !text-primary font-semibold"
+          className="group !text-primary relative z-30 h-5 items-center !gap-0 space-x-1.5 bg-transparent !p-0 text-base font-semibold hover:bg-transparent"
         >
-          <span className="text-xl -translate-y-0.5 group-hover:-rotate-12 group-hover:scale-[1.2] ease-in-out duration-300">
+          <span className="-translate-y-0.5 text-xl duration-300 ease-in-out group-hover:scale-[1.2] group-hover:-rotate-12">
             ✦
           </span>
           <span className="-translate-y-0.5 text-sm">Matheus Figueiredo</span>
         </Link>
-        <div className="w-full h-[1px] max-w-10 my-2 lg:w-[1px] bg-border lg:min-h-4 mx-4" />
-        <p className="text-muted-foreground/75">{copyright()}</p>
-        <div className="flex flex-col lg:flex-row items-center space-y-4 mt-4 lg:mt-0 lg:space-y-0 lg:gap-2.5 ml-0 lg:ml-auto">
-          <Link>Agende uma reunião</Link>
+        <div className="bg-border mx-4 my-2 h-[1px] w-full max-w-10 lg:min-h-4 lg:w-[1px]" />
+        <p className="text-muted-foreground/75 text-xs">{copyright()}</p>
+        <div className="mt-4 ml-0 flex flex-col items-center space-y-4 lg:mt-0 lg:ml-auto lg:flex-row lg:gap-2.5 lg:space-y-0">
+          <Link> Schedule a meeting </Link>
 
           <ul className="flex items-center gap-1.5">
             {mimic.socialLinks.map((link) => {

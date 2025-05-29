@@ -1,23 +1,19 @@
-import { Card, CardImage, CardTitle } from "@/components/ui/card";
-import { truncate } from "@/utils/functions/truncate";
+"use server";
 
-export function ProjectCard() {
+import { Repository } from "@/actions/github/namespace";
+import { Card, CardTitle } from "@/components/ui/card";
+import { truncate } from "@/utils/functions/truncate";
+import Link from "next/link";
+
+export async function ProjectCard({ data }: { data: Repository }) {
   return (
     <Card className="group/project gap-3 border-none bg-transparent p-0">
-      <div className="relative h-40 w-full overflow-hidden rounded-xl">
-        <CardImage
-          src="https://github.com/user-attachments/assets/4cc1ef02-e07f-471f-9385-cc2854854d84"
-          alt="Matheus Figueiredo Website Banner"
-          fill
-          className="object-cover transition-all duration-400 group-hover/project:scale-105"
-        />
-      </div>
-      <CardTitle className="text-sm font-medium">
-        {truncate(
-          "Trust Center: A Micro Frontend Solution for Compliance and Customer Engagement",
-          70,
-        )}
-      </CardTitle>
+      <Link href={data?.html_url ?? ""}>
+        <div className="bg-accent relative h-40 w-full overflow-hidden rounded-xl"></div>
+        <CardTitle className="mt-2.5 text-sm font-medium">
+          {truncate(data?.description, 70)}
+        </CardTitle>
+      </Link>
     </Card>
   );
 }
