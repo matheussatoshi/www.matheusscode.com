@@ -1,6 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/cn";
+import Image from "next/image";
 
 interface Avatar {
   imageUrl: string;
@@ -26,7 +27,7 @@ export const AvatarCircles = ({
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img
+          <Image
             key={index}
             className="size-7 rounded-full border-2 border-white dark:border-gray-800"
             src={url.imageUrl}

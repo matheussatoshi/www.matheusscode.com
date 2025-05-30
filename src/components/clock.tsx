@@ -18,7 +18,7 @@ export function Clock() {
   return (
     <span className="bg-accent flex h-7 items-center justify-center gap-1 rounded-sm px-2 py-1 text-xs opacity-100">
       <ClockIcon size={14} />
-      {getMyFusor()}
+      {time}
     </span>
   );
 }

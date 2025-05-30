@@ -18,9 +18,18 @@ function Card({ className, ...props }: React.ComponentProps<"div">) {
 
 function CardImage({
   className,
+  src,
+  alt,
   ...props
 }: React.ComponentProps<"img"> & ImageProps) {
-  return <Image className={cn("rounded-xl", className)} {...props} />;
+  return (
+    <Image
+      src={src}
+      alt={alt}
+      className={cn("rounded-xl", className)}
+      {...props}
+    />
+  );
 }
 
 function CardHeader({ className, ...props }: React.ComponentProps<"div">) {

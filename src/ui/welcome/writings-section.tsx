@@ -26,7 +26,7 @@ export function WritingsSection({
         {articles &&
           articles
             .splice(0, 4)
-            .map((item, idx) => (
+            .map((item) => (
               <ArticleCard key={item.slug} data={item} showImage />
             ))}
       </div>

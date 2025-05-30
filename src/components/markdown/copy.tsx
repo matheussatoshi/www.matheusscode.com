@@ -28,6 +28,7 @@ export default function Copy({
       size="icon"
       className={cn(
         "text-background dark:text-primary border-border/25 dark:border-border size-7 rounded-md border !bg-neutral-900 hover:!opacity-85",
+        className,
       )}
       onClick={handleCopy}
     >

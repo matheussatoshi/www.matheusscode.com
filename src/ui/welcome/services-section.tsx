@@ -12,6 +12,7 @@ import {
   SkipBackIcon,
   SkipForwardIcon,
 } from "lucide-react";
+import Image from "next/image";
 import { Section } from "../layout/section";
 
 export function ServicesSection({ data: user }: { data: Github.Profile }) {
@@ -72,7 +73,7 @@ export function ServicesSection({ data: user }: { data: Github.Profile }) {
 
       <div className="group hover:bg-muted/50 bg-background border-border absolute right-0 bottom-0 hidden w-full max-w-[13rem] translate-y-10 flex-col rounded-md border px-2.5 pt-2 text-xs backdrop-blur-2xl transition-all select-none hover:shadow-xs md:flex">
         <div className="flex gap-2">
-          <img
+          <Image
             src={user.avatar_url}
             alt={user.name}
             width={45}
