@@ -126,8 +126,12 @@
   * {
     @apply border-border outline-ring/50;
   }
+  html {
+    @apply h-full;
+  }
+
   body {
-    @apply bg-background text-foreground text-xs md:text-sm;
+    @apply bg-background text-foreground h-full text-xs md:text-sm;
   }
 
   br {

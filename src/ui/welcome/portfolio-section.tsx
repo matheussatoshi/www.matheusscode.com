@@ -1,12 +1,14 @@
-import { Repository } from "@/actions/github/namespace";
+import { Notion } from "@/actions/notion/namespace";
 import { Link } from "@/components/ui/link";
+import { Separator } from "@/components/ui/separator";
 import { Section } from "../layout/section";
 import { ProjectCard } from "../shared/project-card";
-import { Separator } from "@/components/ui/separator";
 
-export function PortfolioSection({ data: repos }: { data: Repository[] }) {
-  console.log(JSON.stringify(repos[0], null, 2));
-
+export function PortfolioSection({
+  data: repos,
+}: {
+  data: Notion.MappedProjects[];
+}) {
   return (
     <Section className="flex flex-col">
       <div className="relative mb-14 flex items-center gap-7">
@@ -25,13 +27,10 @@ export function PortfolioSection({ data: repos }: { data: Repository[] }) {
         {repos &&
           repos
             .splice(0, 4)
-            .map((item) => <ProjectCard key={item.id} data={item} />)}
+            .map((item) => <ProjectCard key={item.slug} data={item} />)}
       </div>
 
-      <Link
-        href="https://github.com/matheussfigueiredo?tab=repositories"
-        className="mx-auto mt-12"
-      >
+      <Link href="/portfolio" className="mx-auto mt-12">
         View Full Portfolio
       </Link>
     </Section>

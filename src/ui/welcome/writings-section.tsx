@@ -1,11 +1,16 @@
+import { Notion } from "@/actions/notion/namespace";
 import { Link } from "@/components/ui/link";
 import { Separator } from "@/components/ui/separator";
 import { Section } from "../layout/section";
 import { ArticleCard } from "../shared/article-card";
 
-export function ArticlesSection() {
+export function WritingsSection({
+  data: articles,
+}: {
+  data: Notion.MappedArticles[];
+}) {
   return (
-    <Section className="flex flex-col">
+    <Section className="mb-14 flex flex-col">
       <div className="relative mb-14 flex items-center gap-7">
         <div className="flex flex-col space-y-2 text-wrap md:text-nowrap">
           <h1 className="text-xl font-bold">My Writings</h1>
@@ -18,12 +23,18 @@ export function ArticlesSection() {
       </div>
 
       <div className="flex w-full flex-col gap-7">
-        {[1, 2, 3, 4].map((item) => (
-          <ArticleCard key={item} />
-        ))}
+        {articles &&
+          articles
+            .splice(0, 4)
+            .map((item, idx) => (
+              <ArticleCard key={item.slug} data={item} showImage />
+            ))}
       </div>
 
-      <Link className="mx-auto mt-12"> View All Writings </Link>
+      <Link href="/writings" className="mx-auto mt-12">
+        {" "}
+        View All Writings{" "}
+      </Link>
     </Section>
   );
 }

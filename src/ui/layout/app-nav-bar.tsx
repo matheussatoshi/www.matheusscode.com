@@ -7,7 +7,7 @@ import { MobileNav } from "./mobile-nav";
 
 export function AppNavBar() {
   return (
-    <header className="top-0 flex w-full flex-row justify-between md:fixed md:z-20">
+    <header className="bg-background/75 top-0 flex w-full flex-row justify-between md:fixed md:z-20">
       <div className="flex w-full max-w-full items-center justify-between p-3 backdrop-blur-2xl transition-all md:p-5">
         <div className="flex w-full max-w-xs items-center justify-start gap-3">
           <MobileNav />

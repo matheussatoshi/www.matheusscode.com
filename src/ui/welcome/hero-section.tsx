@@ -1,12 +1,12 @@
-import { Profile } from "@/actions/github/namespace";
+import { Github } from "@/actions/github/namespace";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Section } from "../layout/section";
 
-export function HeroSection({ data: user }: { data: Profile }) {
+export function HeroSection({ data: user }: { data: Github.Profile }) {
   return (
     <Section className="flex flex-col-reverse items-center justify-between md:flex-row">
-      <div className="flex flex-col">
-        <h1 className="text-lg font-bold">{user.name}</h1>
+      <div className="flex flex-col items-center justify-center md:items-start md:justify-start">
+        <h1 className="text-2xl font-bold">{user.name}</h1>
         <h3 className="text-muted-foreground font-medium">
           {["Developer", "Content Creator", "Dad", "Musician", "UI/UX"].join(
             " <> ",

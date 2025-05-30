@@ -47,18 +47,13 @@ export const mimic = {
     },
     {
       id: 2,
-      label: "About",
-      href: "/",
+      label: "Portfolio",
+      href: "/portfolio",
     },
     {
       id: 3,
-      label: "Portfolio",
-      href: "/",
-    },
-    {
-      id: 4,
-      label: "Articles",
-      href: "/",
+      label: "Writings",
+      href: "/writings",
     },
   ],
   mockAvatars: [

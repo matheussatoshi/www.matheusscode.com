@@ -1,9 +1,9 @@
 "use server";
 
 import { GITHUB_URL } from "@/registry/registry-domains";
-import { Profile } from "./namespace";
+import { Github } from "./namespace";
 
-export async function getProfile(): Promise<Profile> {
+export async function getProfile(): Promise<Github.Profile> {
   const response = await fetch(
     `${GITHUB_URL}/users/${process.env.GITHUB_USERNAME}`,
     {

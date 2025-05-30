@@ -4,7 +4,7 @@ import { copyright } from "@/utils/functions/copyright";
 
 export function AppFooter() {
   return (
-    <footer className="border-border w-full border-t sm:mt-20">
+    <footer className="border-border mt-auto w-full border-t">
       <div className="container mx-auto flex w-full max-w-7xl flex-col items-center justify-center px-7 py-8 lg:flex-row lg:justify-normal">
         <Link
           href="/"

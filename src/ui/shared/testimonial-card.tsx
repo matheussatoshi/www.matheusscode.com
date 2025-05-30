@@ -8,7 +8,7 @@ import {
 
 export function TestimonailCard() {
   return (
-    <Card className="group/testimonial gap-2 bg-transparent pt-3.5 transition-all hover:-translate-y-1 hover:shadow-md">
+    <Card className="group/testimonial gap-2 pt-3.5 transition-all hover:-translate-y-1 hover:shadow-sm">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="currentColor"

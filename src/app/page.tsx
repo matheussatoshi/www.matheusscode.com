@@ -1,24 +1,32 @@
 import { getProfile } from "@/actions/github/get-profile";
-import { getRepos } from "@/actions/github/get-repos";
-import { MainLayout } from "@/ui/layout/page-wrapper";
+import { getArticles } from "@/actions/notion/get-articles";
+import { getProjects } from "@/actions/notion/get-projects";
+import { PageLayout } from "@/ui/layout/page-layout";
 import { AboutSection } from "@/ui/welcome/about-section";
-import { ArticlesSection } from "@/ui/welcome/articles-section";
+import { WritingsSection } from "@/ui/welcome/writings-section";
 import { HeroSection } from "@/ui/welcome/hero-section";
 import { PortfolioSection } from "@/ui/welcome/portfolio-section";
 import { ServicesSection } from "@/ui/welcome/services-section";
-import { TestimonialsSection } from "@/ui/welcome/testimonials-section";
 
 export default async function Home() {
-  const [profile, repositories] = await Promise.all([getProfile(), getRepos()]);
+  const [profile, projects, articles] = await Promise.all([
+    getProfile(),
+    getProjects(),
+    getArticles(),
+  ]);
 
   return (
-    <MainLayout>
-      <HeroSection data={profile} />
-      <AboutSection />
-      <ServicesSection />
-      <PortfolioSection data={repositories} />
-      <TestimonialsSection />
-      <ArticlesSection />
-    </MainLayout>
+    <PageLayout>
+      <div className="space-y-6">
+        <HeroSection data={profile} />
+        <div className="space-y-12">
+          <AboutSection />
+          <ServicesSection />
+        </div>
+      </div>
+      <PortfolioSection data={projects} />
+      {/* <TestimonialsSection /> */}
+      <WritingsSection data={articles} />
+    </PageLayout>
   );
 }
