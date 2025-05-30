@@ -84,9 +84,9 @@ export const mimic = {
     },
   ],
   metadata: {
-    name: "Matheus Figueiredo",
-    creator: "Feel Good Inc.",
     copyright: copyright(),
+    creator: "Feel Good Inc.",
+    name: "Matheus Figueiredo",
     keywords: ["Encurtador", "Vitrine", "Portfolio"],
   },
 };
