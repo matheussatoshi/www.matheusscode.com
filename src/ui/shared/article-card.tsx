@@ -18,7 +18,7 @@ export function ArticleCard({
 }) {
   return (
     <Link href={`/writings/${data.slug}`}>
-      <Card className="group/article border-border flex-col gap-2 rounded-none border-x-0 border-t-0 border-b bg-transparent p-0 pb-4 md:flex-row">
+      <Card className="group/article border-border flex-col gap-2 rounded-none border-x-0 border-t-0 border-b bg-transparent px-0 py-4 md:flex-row">
         <div className="w-full">
           <CardTitle className="mb-2 text-xl group-hover/article:underline">
             {truncate(data.title, 70)}
