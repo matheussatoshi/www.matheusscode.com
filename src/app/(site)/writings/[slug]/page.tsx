@@ -9,9 +9,9 @@ import { constructMetadata } from "@/utils/functions/construct-metadata";
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const { slug } = params;
+  const { slug } = await params;
   const { title, description } = await getArticle(slug);
 
   return constructMetadata({

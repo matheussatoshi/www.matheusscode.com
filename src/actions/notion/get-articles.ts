@@ -1,6 +1,6 @@
 import { fetcher } from "@/lib/fetcher";
-import { Notion } from "./namespace";
 import { revalidate } from "@/registry/registry-middleware";
+import { Notion } from "./namespace";
 
 export async function getArticles() {
   const response = await fetcher<Notion.MappedArticles[]>("/writings", {

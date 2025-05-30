@@ -27,7 +27,7 @@ export default async function Page() {
       </Transmutation>
       <Transmutation transition={transitions.goUp}>
         <Section>
-          {articles && articles.length > 0 ? (
+          {articles.length > 0 ? (
             articles.map((article, idx) => (
               <Transmutation
                 key={article.slug}
@@ -40,7 +40,7 @@ export default async function Page() {
           ) : (
             <EmptyContent
               title="Oops, there's nothing here"
-              subtitle="There are no projects published here yet."
+              subtitle="There are no articles published here yet."
             />
           )}
         </Section>

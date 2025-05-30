@@ -23,7 +23,6 @@
       "@/ui/*": ["./src/ui/*"],
       "@/lib/*": ["./src/lib/*"],
       "@/config/*": ["./config/*"],
-      "@/actions/*": ["./actions/*"],
       "@/utils/*": ["./src/utils/*"],
       "@/components/*": ["./src/components/*"],
       "@/interfaces/*": ["./interfaces/*"],
