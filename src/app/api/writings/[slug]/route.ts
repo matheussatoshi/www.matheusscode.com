@@ -5,11 +5,9 @@ import { NotionToMarkdown } from "notion-to-md";
 
 export async function GET(
   _req: Request,
-  { params }: { params: { slug: string } },
+  { params }: { params: Promise<{ slug: string }> },
 ) {
-  const slug = await params.slug;
-
-  console.log(slug);
+  const { slug } = await params;
 
   const response = await notion.databases.query({
     database_id: process.env.NOTION_DATABASE_ARTICLES_ID!,
