@@ -4,6 +4,7 @@ import { PageHeader } from "@/ui/layout/page-header";
 import { PageLayout } from "@/ui/layout/page-layout";
 import { Section } from "@/ui/layout/section";
 import { ArticleCard } from "@/ui/shared/article-card";
+import { EmptyContent } from "@/ui/shared/empty-content";
 import Transmutation from "@/ui/shared/transmulation";
 import { constructMetadata } from "@/utils/functions/construct-metadata";
 
@@ -26,7 +27,7 @@ export default async function Page() {
       </Transmutation>
       <Transmutation transition={transitions.goUp}>
         <Section>
-          {articles &&
+          {articles.length > 0 ? (
             articles.map((article, idx) => (
               <Transmutation
                 key={article.slug}
@@ -35,7 +36,13 @@ export default async function Page() {
               >
                 <ArticleCard data={article} />
               </Transmutation>
-            ))}
+            ))
+          ) : (
+            <EmptyContent
+              title="Oops, there's nothing here"
+              subtitle="There are no projects published here yet."
+            />
+          )}
         </Section>
       </Transmutation>
     </PageLayout>

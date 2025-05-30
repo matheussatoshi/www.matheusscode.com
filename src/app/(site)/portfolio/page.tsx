@@ -3,6 +3,7 @@ import { transitions } from "@/registry/registry-animations";
 import { PageHeader } from "@/ui/layout/page-header";
 import { PageLayout } from "@/ui/layout/page-layout";
 import { Section } from "@/ui/layout/section";
+import { EmptyContent } from "@/ui/shared/empty-content";
 import { ProjectCard } from "@/ui/shared/project-card";
 import Transmutation from "@/ui/shared/transmulation";
 import { constructMetadata } from "@/utils/functions/construct-metadata";
@@ -26,7 +27,7 @@ export default async function Page() {
       </Transmutation>
       <Transmutation transition={transitions.goUp}>
         <Section className="grid md:grid-cols-2">
-          {projects &&
+          {projects.length > 0 ? (
             projects.map((article, idx) => (
               <Transmutation
                 key={article.slug}
@@ -35,7 +36,13 @@ export default async function Page() {
               >
                 <ProjectCard data={article} />
               </Transmutation>
-            ))}
+            ))
+          ) : (
+            <EmptyContent
+              title="Oops, there's nothing here"
+              subtitle="There are no projects published here yet."
+            />
+          )}
         </Section>
       </Transmutation>
     </PageLayout>
