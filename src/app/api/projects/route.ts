@@ -17,8 +17,8 @@ export async function GET() {
       title: project.properties?.title?.title?.[0]?.plain_text,
     }));
 
-    return NextResponse.json(projects ?? []);
+    return NextResponse.json(projects);
   } catch (_) {
-    return NextResponse.json([]);
+    return new NextResponse("Erro ao buscar projetos", { status: 500 });
   }
 }
