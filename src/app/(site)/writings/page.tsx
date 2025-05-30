@@ -27,7 +27,7 @@ export default async function Page() {
       </Transmutation>
       <Transmutation transition={transitions.goUp}>
         <Section>
-          {articles.length > 0 ? (
+          {articles && articles.length > 0 ? (
             articles.map((article, idx) => (
               <Transmutation
                 key={article.slug}

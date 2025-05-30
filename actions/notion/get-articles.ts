@@ -1,12 +1,13 @@
 import { fetcher } from "@/lib/fetcher";
 import { Notion } from "./namespace";
+import { revalidate } from "@/registry/registry-middleware";
 
 export async function getArticles() {
   const response = await fetcher<Notion.MappedArticles[]>("/writings", {
     method: "GET",
     cache: "force-cache",
     next: {
-      revalidate: 7200,
+      revalidate,
       tags: ["get-articles"],
     },
   });
@@ -21,7 +22,7 @@ export async function getArticle(slug: string) {
       method: "GET",
       cache: "force-cache",
       next: {
-        revalidate: 7200,
+        revalidate,
         tags: ["get-article"],
       },
     },

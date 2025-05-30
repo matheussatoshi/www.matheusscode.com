@@ -27,7 +27,7 @@ export default async function Page() {
       </Transmutation>
       <Transmutation transition={transitions.goUp}>
         <Section className="grid md:grid-cols-2">
-          {projects.length > 0 ? (
+          {projects && projects.length > 0 ? (
             projects.map((article, idx) => (
               <Transmutation
                 key={article.slug}

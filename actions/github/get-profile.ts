@@ -1,4 +1,5 @@
 import { GITHUB_URL } from "@/registry/registry-domains";
+import { revalidate } from "@/registry/registry-middleware";
 import { Github } from "./namespace";
 
 export async function getProfile() {
@@ -7,6 +8,7 @@ export async function getProfile() {
     {
       cache: "force-cache",
       next: {
+        revalidate,
         tags: ["get-profile"],
       },
     },
