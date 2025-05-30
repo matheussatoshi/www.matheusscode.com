@@ -13,5 +13,5 @@ export async function fetcher<T = unknown>(
 
   const result = await response.json();
 
-  return result.data as T;
+  return result as T;
 }

@@ -19,6 +19,7 @@ const eslintConfig = [
       "@typescript-eslint/ban-ts-comment": "off",
       "@typescript-eslint/no-namespace": "off",
       "react-hooks/exhaustive-deps": "off",
+      "@typescript-eslint/no-unused-vars": "off",
     },
   }),
 ];
