@@ -27,8 +27,14 @@ export default async function Page() {
       <Transmutation transition={transitions.goUp}>
         <Section>
           {articles &&
-            articles.map((article) => (
-              <ArticleCard key={article.slug} data={article} />
+            articles.map((article, idx) => (
+              <Transmutation
+                key={article.slug}
+                transition={transitions.goUp}
+                time={idx * 0.8}
+              >
+                <ArticleCard data={article} />
+              </Transmutation>
             ))}
         </Section>
       </Transmutation>

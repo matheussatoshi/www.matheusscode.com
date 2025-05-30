@@ -7,7 +7,9 @@ export async function GET(
   _req: Request,
   { params }: { params: { slug: string } },
 ) {
-  const slug = params.slug;
+  const slug = await params.slug;
+
+  console.log(slug);
 
   const response = await notion.databases.query({
     database_id: process.env.NOTION_DATABASE_ARTICLES_ID!,

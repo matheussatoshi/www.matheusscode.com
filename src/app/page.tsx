@@ -26,7 +26,11 @@ export default async function Home() {
 
   return (
     <PageLayout className="mb-14">
-      <Transmutation transition={transitions.goUp} className="space-y-14">
+      <Transmutation
+        transition={transitions.goUp}
+        time={0.8}
+        className="space-y-14"
+      >
         <div className="space-y-6">
           <HeroSection data={profile} />
           <div className="space-y-12">

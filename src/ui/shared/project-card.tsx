@@ -14,6 +14,8 @@ export async function ProjectCard({ data }: { data: Notion.MappedProjects }) {
             src={data.image}
             alt={data.title}
             fill
+            quality={100}
+            priority
             className="h-full w-full rounded-lg object-cover transition-all duration-300 group-hover/project:scale-110"
           />
         </div>

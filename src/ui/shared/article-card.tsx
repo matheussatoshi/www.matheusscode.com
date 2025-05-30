@@ -36,6 +36,8 @@ export function ArticleCard({
               src={data.media}
               alt={data.title}
               fill
+              quality={100}
+              priority
               className="h-full w-full object-cover transition-all duration-400 group-hover/article:scale-105"
             />
           </div>

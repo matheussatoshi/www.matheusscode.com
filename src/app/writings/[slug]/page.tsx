@@ -29,7 +29,7 @@ export default async function Page({
   const { title, content, date } = await getArticle(slug);
 
   return (
-    <PageLayout className="relative mb-20">
+    <PageLayout className="relative mb-20 pt-12">
       <Transmutation transition={transitions.goUp} className="space-y-12">
         <Section className="w-full space-y-4 py-0">
           <h1 className="text-4xl font-bold">{title}</h1>

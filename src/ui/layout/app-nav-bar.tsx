@@ -1,14 +1,20 @@
 import { Clock } from "@/components/clock";
 import { ModeToggle } from "@/components/mode-toggle";
 import { mimic } from "@/lib/mimic";
+import { transitions } from "@/registry/registry-animations";
 import { MapPinIcon } from "lucide-react";
 import Link from "next/link";
+import Transmutation from "../shared/transmulation";
 import { MobileNav } from "./mobile-nav";
 
 export function AppNavBar() {
   return (
     <header className="bg-background/75 top-0 flex w-full flex-row justify-between md:fixed md:z-20">
-      <div className="flex w-full max-w-full items-center justify-between p-3 backdrop-blur-2xl transition-all md:p-5">
+      <Transmutation
+        transition={transitions.reveal}
+        time={0.4}
+        className="flex w-full max-w-full items-center justify-between p-3 backdrop-blur-2xl transition-all md:p-5"
+      >
         <div className="flex w-full max-w-xs items-center justify-start gap-3">
           <MobileNav />
           <span className="bg-accent hidden rounded-sm px-1.5 text-xl select-none lg:block">
@@ -32,7 +38,7 @@ export function AppNavBar() {
           </span>
           <Clock />
         </div>
-      </div>
+      </Transmutation>
     </header>
   );
 }

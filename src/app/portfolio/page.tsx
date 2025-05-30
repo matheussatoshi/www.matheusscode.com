@@ -27,8 +27,14 @@ export default async function Page() {
       <Transmutation transition={transitions.goUp}>
         <Section className="grid md:grid-cols-2">
           {articles &&
-            articles.map((article) => (
-              <ProjectCard key={article.slug} data={article} />
+            articles.map((article, idx) => (
+              <Transmutation
+                key={article.slug}
+                transition={transitions.goUp}
+                time={idx * 0.8}
+              >
+                <ProjectCard data={article} />
+              </Transmutation>
             ))}
         </Section>
       </Transmutation>
