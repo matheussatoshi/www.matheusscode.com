@@ -1,14 +1,10 @@
 import { getProfile } from "@/actions/github/get-profile";
-import { getArticles } from "@/actions/notion/get-articles";
-import { getProjects } from "@/actions/notion/get-projects";
 import { transitions } from "@/registry/registry-animations";
 import { PageLayout } from "@/ui/layout/page-layout";
 import Transmutation from "@/ui/shared/transmulation";
 import { AboutSection } from "@/ui/welcome/about-section";
 import { HeroSection } from "@/ui/welcome/hero-section";
-import { PortfolioSection } from "@/ui/welcome/portfolio-section";
 import { ServicesSection } from "@/ui/welcome/services-section";
-import { WritingsSection } from "@/ui/welcome/writings-section";
 import { constructMetadata } from "@/utils/functions/construct-metadata";
 
 export const metadata = constructMetadata({
@@ -19,8 +15,8 @@ export const metadata = constructMetadata({
 
 export default async function Home() {
   const profile = await getProfile();
-  const projects = await getProjects();
-  const articles = await getArticles();
+  // const projects = await getProjects();
+  // const articles = await getArticles();
 
   return (
     <PageLayout className="mb-14">
@@ -36,9 +32,9 @@ export default async function Home() {
             <ServicesSection data={profile} />
           </div>
         </div>
-        <PortfolioSection data={projects} />
+        {/* <PortfolioSection data={projects} /> */}
         {/* <TestimonialsSection /> */}
-        <WritingsSection data={articles} />
+        {/* <WritingsSection data={articles} /> */}
       </Transmutation>
     </PageLayout>
   );

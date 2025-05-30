@@ -1,4 +1,3 @@
-import { getArticles } from "@/actions/notion/get-articles";
 import { transitions } from "@/registry/registry-animations";
 import { PageHeader } from "@/ui/layout/page-header";
 import { PageLayout } from "@/ui/layout/page-layout";
@@ -15,7 +14,7 @@ export const metadata = constructMetadata({
 });
 
 export default async function Page() {
-  const articles = await getArticles();
+  const articles: any[] = [];
 
   return (
     <PageLayout className="space-y-8">
