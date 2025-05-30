@@ -1,3 +1,4 @@
+import { getProjects } from "@/actions/notion/get-projects";
 import { transitions } from "@/registry/registry-animations";
 import { PageHeader } from "@/ui/layout/page-header";
 import { PageLayout } from "@/ui/layout/page-layout";
@@ -14,7 +15,7 @@ export const metadata = constructMetadata({
 });
 
 export default async function Page() {
-  const projects: any[] = [];
+  const projects = await getProjects();
 
   return (
     <PageLayout className="space-y-8">
