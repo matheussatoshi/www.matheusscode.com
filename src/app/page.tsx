@@ -1,7 +1,9 @@
 import { getProfile } from "@/actions/github/get-profile";
 import { getArticles } from "@/actions/notion/get-articles";
 import { getProjects } from "@/actions/notion/get-projects";
+import { transitions } from "@/registry/registry-animations";
 import { PageLayout } from "@/ui/layout/page-layout";
+import Transmutation from "@/ui/shared/transmulation";
 import { AboutSection } from "@/ui/welcome/about-section";
 import { HeroSection } from "@/ui/welcome/hero-section";
 import { PortfolioSection } from "@/ui/welcome/portfolio-section";
@@ -24,16 +26,18 @@ export default async function Home() {
 
   return (
     <PageLayout className="mb-14">
-      <div className="space-y-6">
-        <HeroSection data={profile} />
-        <div className="space-y-12">
-          <AboutSection />
-          <ServicesSection data={profile} />
+      <Transmutation transition={transitions.goUp} className="space-y-14">
+        <div className="space-y-6">
+          <HeroSection data={profile} />
+          <div className="space-y-12">
+            <AboutSection />
+            <ServicesSection data={profile} />
+          </div>
         </div>
-      </div>
-      <PortfolioSection data={projects} />
-      {/* <TestimonialsSection /> */}
-      <WritingsSection data={articles} />
+        <PortfolioSection data={projects} />
+        {/* <TestimonialsSection /> */}
+        <WritingsSection data={articles} />
+      </Transmutation>
     </PageLayout>
   );
 }

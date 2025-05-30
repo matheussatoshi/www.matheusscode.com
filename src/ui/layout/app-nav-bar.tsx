@@ -1,7 +1,7 @@
+import { Clock } from "@/components/clock";
 import { ModeToggle } from "@/components/mode-toggle";
 import { mimic } from "@/lib/mimic";
-import { getMyFusor } from "@/utils/functions/date";
-import { ClockIcon, MapPinIcon } from "lucide-react";
+import { MapPinIcon } from "lucide-react";
 import Link from "next/link";
 import { MobileNav } from "./mobile-nav";
 
@@ -30,10 +30,7 @@ export function AppNavBar() {
             <MapPinIcon size={14} />
             MANAUS
           </span>
-          <span className="bg-accent flex h-7 items-center justify-center gap-1 rounded-sm px-2 py-1 text-xs opacity-100">
-            <ClockIcon size={14} />
-            {getMyFusor()}
-          </span>
+          <Clock />
         </div>
       </div>
     </header>

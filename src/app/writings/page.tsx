@@ -1,8 +1,10 @@
 import { getArticles } from "@/actions/notion/get-articles";
+import { transitions } from "@/registry/registry-animations";
 import { PageHeader } from "@/ui/layout/page-header";
 import { PageLayout } from "@/ui/layout/page-layout";
 import { Section } from "@/ui/layout/section";
 import { ArticleCard } from "@/ui/shared/article-card";
+import Transmutation from "@/ui/shared/transmulation";
 import { constructMetadata } from "@/utils/functions/construct-metadata";
 
 export const metadata = constructMetadata({
@@ -16,16 +18,20 @@ export default async function Page() {
 
   return (
     <PageLayout className="space-y-8">
-      <PageHeader
-        title="My Writings"
-        description="Along with coding I also like to write about life and technology. Here are some of my recent posts."
-      />
-      <Section>
-        {articles &&
-          articles.map((article) => (
-            <ArticleCard key={article.slug} data={article} />
-          ))}
-      </Section>
+      <Transmutation transition={transitions.goDown}>
+        <PageHeader
+          title="My Writings"
+          description="Along with coding I also like to write about life and technology. Here are some of my recent posts."
+        />
+      </Transmutation>
+      <Transmutation transition={transitions.goUp}>
+        <Section>
+          {articles &&
+            articles.map((article) => (
+              <ArticleCard key={article.slug} data={article} />
+            ))}
+        </Section>
+      </Transmutation>
     </PageLayout>
   );
 }
