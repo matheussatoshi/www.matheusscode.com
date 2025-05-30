@@ -4,6 +4,8 @@ import { notion } from "@/lib/notion";
 import { NotionToMarkdown } from "notion-to-md";
 import { Notion } from "./namespace";
 
+export const revalidate = 7200;
+
 export async function getProjects() {
   const response = await notion.databases.query({
     database_id: process.env.NOTION_DATABASE_PROJECTS_ID!,
