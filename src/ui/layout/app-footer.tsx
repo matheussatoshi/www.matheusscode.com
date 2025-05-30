@@ -18,7 +18,13 @@ export function AppFooter() {
         <div className="bg-border mx-4 my-2 h-[1px] w-full max-w-10 lg:min-h-4 lg:w-[1px]" />
         <p className="text-muted-foreground/75 text-xs">{copyright()}</p>
         <div className="mt-4 ml-0 flex flex-col items-center space-y-4 lg:mt-0 lg:ml-auto lg:flex-row lg:gap-2.5 lg:space-y-0">
-          <Link> Schedule a meeting </Link>
+          <Link
+            target="_blank"
+            href="https://calendar.app.google/rT5kHBsi5DCqKQ2WA"
+          >
+            {" "}
+            Schedule a meeting{" "}
+          </Link>
 
           <ul className="flex items-center gap-1.5">
             {mimic.socialLinks.map((link) => {

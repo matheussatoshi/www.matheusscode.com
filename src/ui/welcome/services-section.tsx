@@ -29,8 +29,7 @@ export function ServicesSection({ data: user }: { data: Github.Profile }) {
 
         <ul className="text-muted-foreground mb-6 list-disc space-y-1 pl-4">
           <li>
-            Micro frontends, Single Page Apps, <br /> Progressive Web Apps etc.
-            with Vue 3 and React
+            Single Page Apps, <br /> Progressive Web Apps etc. with React
           </li>
           <li>Web performance optimization</li>
           <li>3D/Animated websites with Three.js and GSAP</li>
@@ -38,7 +37,10 @@ export function ServicesSection({ data: user }: { data: Github.Profile }) {
         </ul>
 
         <div className="flex items-center gap-3.5">
-          <Link href="/"> Schedule a meeting </Link>
+          <Link target="_blank" href="https://calendar.app.google/rT5kHBsi5DCqKQ2WA">
+            {" "}
+            Schedule a meeting{" "}
+          </Link>
           <Link variant="outline" href="/">
             Resume
           </Link>
