@@ -14,7 +14,7 @@ export const metadata = constructMetadata({
 });
 
 export default async function Page() {
-  const articles = await getProjects();
+  const projects = await getProjects();
 
   return (
     <PageLayout className="space-y-8">
@@ -26,8 +26,8 @@ export default async function Page() {
       </Transmutation>
       <Transmutation transition={transitions.goUp}>
         <Section className="grid md:grid-cols-2">
-          {articles &&
-            articles.map((article, idx) => (
+          {projects &&
+            projects.map((article, idx) => (
               <Transmutation
                 key={article.slug}
                 transition={transitions.goUp}
