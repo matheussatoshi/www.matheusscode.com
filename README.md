@@ -67,10 +67,10 @@
 
 ## Follow Me
 
-- [**Threads**](https://www.threads.net/@matheusscode)
-- [**LinkedIn**](https://www.linkedin.com/in/matheussfigueiredo/)
-- [**GitHub**](https://github.com/matheusscode)
-- [**Instagram**](https://instagram.com/matheusscode)
+- [**Threads**](https://www.threads.com/@letmat.code)
+- [**Linkedin**](https://www.linkedin.com/in/matheussfigueiredo/)
+- [**Instagram**](https://www.instagram.com/letmat.code/)
+- [**Youtube**](https://www.youtube.com/@letmatcode)
 
 <br/>
 
