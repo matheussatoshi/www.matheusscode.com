@@ -18,11 +18,9 @@ export const metadata = constructMetadata({
 });
 
 export default async function Home() {
-  const [profile, projects, articles] = await Promise.all([
-    getProfile(),
-    getProjects(),
-    getArticles(),
-  ]);
+  const profile = await getProfile();
+  const projects = await getProjects();
+  const articles = await getArticles();
 
   return (
     <PageLayout className="mb-14">
