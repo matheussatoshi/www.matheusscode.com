@@ -36,7 +36,7 @@ export function ArticleCard({
               src={data.media}
               alt={data.title}
               fill
-              className="h-full w-full object-cover opacity-50 transition-all duration-400 group-hover/article:scale-105 group-hover/article:opacity-100"
+              className="h-full w-full object-cover transition-all duration-400 group-hover/article:scale-105"
             />
           </div>
         )}

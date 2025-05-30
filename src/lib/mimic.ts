@@ -1,3 +1,4 @@
+import { copyright } from "@/utils/functions/copyright";
 import {
   GithubIcon,
   InstagramIcon,
@@ -82,4 +83,10 @@ export const mimic = {
       profileUrl: "https://github.com/itsarghyadas",
     },
   ],
+  metadata: {
+    name: "Matheus Figueiredo",
+    creator: "Feel Good Inc.",
+    copyright: copyright(),
+    keywords: ["Encurtador", "Vitrine", "Portfolio"],
+  },
 };

@@ -46,6 +46,8 @@ export async function getArticle(slug: string) {
 
   return {
     title: typedResponse.results[0].properties.title.title[0].plain_text,
+    description:
+      typedResponse.results[0].properties.description.rich_text[0].plain_text,
     date: typedResponse.results[0].properties.date.rich_text[0].plain_text,
     content: mdString.parent,
   };

@@ -1,9 +1,21 @@
-"use server";
-
 import { getProject } from "@/actions/notion/get-projects";
 import { MarkdownBlock } from "@/components/markdown/markdown-block";
 import { PageLayout } from "@/ui/layout/page-layout";
 import { Section } from "@/ui/layout/section";
+import { constructMetadata } from "@/utils/functions/construct-metadata";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}) {
+  const { slug } = params;
+  const { title } = await getProject(slug);
+
+  return constructMetadata({
+    title,
+  });
+}
 
 export default async function Page({
   params,

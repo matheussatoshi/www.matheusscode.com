@@ -1,3 +1,4 @@
+import { Github } from "@/actions/github/namespace";
 import { AvatarCircles } from "@/components/magicui/avatar-circles";
 import { Button } from "@/components/ui/button";
 import { Link } from "@/components/ui/link";
@@ -13,7 +14,7 @@ import {
 } from "lucide-react";
 import { Section } from "../layout/section";
 
-export function ServicesSection() {
+export function ServicesSection({ data: user }: { data: Github.Profile }) {
   return (
     <Section className="relative flex items-start">
       <div className="flex w-full flex-col">
@@ -72,8 +73,8 @@ export function ServicesSection() {
       <div className="group hover:bg-muted/50 bg-background border-border absolute right-0 bottom-0 hidden w-full max-w-[13rem] translate-y-10 flex-col rounded-md border px-2.5 pt-2 text-xs backdrop-blur-2xl transition-all select-none hover:shadow-xs md:flex">
         <div className="flex gap-2">
           <img
-            src="https://avatars.githubusercontent.com/u/99546472?v=4"
-            alt="Matheus Figueiredo"
+            src={user.avatar_url}
+            alt={user.name}
             width={45}
             height={20}
             className="rounded-md"
