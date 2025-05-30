@@ -1,11 +1,9 @@
-"use server";
-
 import { Notion } from "@/actions/notion/namespace";
 import { Card, CardImage, CardTitle } from "@/components/ui/card";
 import { truncate } from "@/utils/functions/truncate";
 import Link from "next/link";
 
-export async function ProjectCard({ data }: { data: Notion.MappedProjects }) {
+export function ProjectCard({ data }: { data: Notion.MappedProjects }) {
   return (
     <Card className="group/project gap-3 border-none bg-transparent p-0">
       <Link href={data?.url ?? ""} title={data.title}>

@@ -1,5 +1,3 @@
-"use server";
-
 import { fetcher } from "@/lib/fetcher";
 import { Notion } from "./namespace";
 

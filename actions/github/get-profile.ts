@@ -1,11 +1,8 @@
-"use server";
-
-import { fetcher } from "@/lib/fetcher";
 import { GITHUB_URL } from "@/registry/registry-domains";
 import { Github } from "./namespace";
 
-export async function getProfile(): Promise<Github.Profile> {
-  const response = await fetcher<Github.Profile>(
+export async function getProfile() {
+  const response = await fetch(
     `${GITHUB_URL}/users/${process.env.GITHUB_USERNAME}`,
     {
       cache: "force-cache",
@@ -15,5 +12,7 @@ export async function getProfile(): Promise<Github.Profile> {
     },
   );
 
-  return response;
+  const result = await response.json();
+
+  return result as Github.Profile;
 }
