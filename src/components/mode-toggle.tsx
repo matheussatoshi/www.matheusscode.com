@@ -21,6 +21,7 @@ export function ModeToggle() {
         <Button
           variant="outline"
           size="icon"
+          aria-label="Toggle theme mode"
           className={cn(
             "borderbg-neutral-50 flex h-7 w-auto items-center justify-between rounded-sm border-none !px-1.5",
             "bg-accent",

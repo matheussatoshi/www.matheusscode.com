@@ -7,11 +7,11 @@ export function HeroSection({ data: user }: { data: Github.Profile }) {
     <Section className="flex flex-col-reverse items-center justify-between md:flex-row">
       <div className="flex flex-col items-center justify-center md:items-start md:justify-start">
         <h1 className="text-2xl font-bold">{user.name}</h1>
-        <h3 className="text-muted-foreground font-medium">
+        <h2 className="text-muted-foreground font-medium">
           {["Developer", "Content Creator", "Dad", "Musician", "UI/UX"].join(
             " <> ",
           )}
-        </h3>
+        </h2>
       </div>
 
       <div className="relative mb-3.5 md:mb-0">

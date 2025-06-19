@@ -26,7 +26,7 @@ export function ArticleCard({
           <CardDescription className="mb-2 line-clamp-2 text-xs md:line-clamp-3">
             {data.description}
           </CardDescription>
-          <CardSpan className="text-muted-foreground/65 mt-2.5">
+          <CardSpan className="text-muted-foreground/80 mt-2.5">
             {data.date}
           </CardSpan>
         </div>

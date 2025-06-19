@@ -10,7 +10,7 @@ export function ProjectCard({ data }: { data: Notion.MappedProjects }) {
         <div className="bg-accent relative h-40 w-full overflow-hidden rounded-xl">
           <CardImage
             src={data.image}
-            alt={data.title}
+            alt={`Project - ${data.title}`}
             fill
             quality={100}
             priority
