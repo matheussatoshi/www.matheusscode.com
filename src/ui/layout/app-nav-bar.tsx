@@ -1,42 +1,35 @@
-import { Clock } from "@/components/clock";
+"use client";
+
 import { ModeToggle } from "@/components/mode-toggle";
-import { mimic } from "@/lib/mimic";
-import { transitions } from "@/registry/registry-animations";
-import { MapPinIcon } from "lucide-react";
+import { cn } from "@/lib/cn";
+import { ArrowLeftIcon } from "lucide-react";
 import Link from "next/link";
-import Transmutation from "../shared/transmulation";
-import { MobileNav } from "./mobile-nav";
+import { usePathname } from "next/navigation";
+import { Transmutation } from "../../components/transmulation";
 
 export function AppNavBar() {
+  const pathname = usePathname();
+
+  const IS_HOME_PATH = pathname === "/";
+
   return (
-    <header className="bg-background/75 top-0 flex w-full flex-row justify-between md:fixed md:z-20">
-      <Transmutation
-        transition={transitions.reveal}
-        time={0.4}
-        className="flex w-full max-w-full items-center justify-between p-3 backdrop-blur-2xl transition-all md:p-5"
-      >
-        <div className="flex w-full max-w-xs items-center justify-start gap-3">
-          <MobileNav />
-          <span className="bg-accent hidden rounded-sm px-1.5 text-xl select-none lg:block">
-            ✦
-          </span>
+    <header className="bg-background/50 fixed top-0 w-full backdrop-blur-xs md:z-20">
+      <Transmutation>
+        <div
+          className={cn(
+            "mx-auto flex w-full max-w-2xl items-center justify-between py-3 pr-2 pl-6 transition-all md:py-4",
+            IS_HOME_PATH && "justify-end",
+          )}
+        >
+          {!IS_HOME_PATH && (
+            <Link
+              href="/"
+              className="flex items-center gap-1 transition-all hover:gap-1.5"
+            >
+              <ArrowLeftIcon size={16} /> Voltar ao início
+            </Link>
+          )}
           <ModeToggle />
-        </div>
-        <nav className="hidden w-full justify-center lg:flex">
-          <ul className="flex items-center space-x-6 text-sm">
-            {mimic.navigationLinks.map((link) => (
-              <li key={link.id} className="hover:underline">
-                <Link href={link.href}>{link.label}</Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
-        <div className="flex w-full max-w-xs items-center justify-end gap-2">
-          <span className="bg-accent flex h-7 items-center justify-center gap-1 rounded-sm px-2 py-1 text-xs opacity-100">
-            <MapPinIcon size={14} />
-            MANAUS
-          </span>
-          <Clock />
         </div>
       </Transmutation>
     </header>

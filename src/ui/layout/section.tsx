@@ -6,7 +6,7 @@ export function Section({
 }: React.ComponentProps<"section">) {
   return (
     <section
-      className={cn("mx-auto w-full max-w-2xl p-2", className)}
+      className={cn("mx-auto w-full max-w-[635px] space-y-1.5 p-4", className)}
       {...props}
     />
   );

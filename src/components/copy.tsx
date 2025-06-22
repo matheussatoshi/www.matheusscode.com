@@ -3,7 +3,7 @@
 import { cn } from "@/lib/cn";
 import { CheckIcon, CopyIcon } from "lucide-react";
 import { useState } from "react";
-import { Button } from "../ui/button";
+import { Button } from "./ui/button";
 
 export default function Copy({
   content,
@@ -27,7 +27,7 @@ export default function Copy({
     <Button
       size="icon"
       className={cn(
-        "text-background dark:text-primary border-border/25 dark:border-border size-7 rounded-md border !bg-neutral-900 hover:!opacity-85",
+        "bg-background text-primary hover:bg-background/50 size-7 rounded-md active:scale-95",
         className,
       )}
       onClick={handleCopy}

@@ -1,4 +1,4 @@
-import { Notion } from "@/actions/notion/namespace";
+import { Notion } from "@/http/notion/namespace";
 import { notion } from "@/lib/notion";
 import { NextResponse } from "next/server";
 import { NotionToMarkdown } from "notion-to-md";
