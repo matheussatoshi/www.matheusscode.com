@@ -1,7 +1,17 @@
+import { getProfile } from "@/http/github/get-profile";
+import { getArticles } from "@/http/notion/get-articles";
+import { getEducation } from "@/http/notion/get-education";
+import { getProjects } from "@/http/notion/get-projects";
+import { getWorks } from "@/http/notion/get-works";
 import { PageLayout } from "@/ui/layout/page-layout";
 import { Section } from "@/ui/layout/section";
 import { AboutSection } from "@/ui/site/about-section";
 import { ContactSection } from "@/ui/site/contact-section";
+import { EducationSection } from "@/ui/site/education-section";
+import { HeadingSection } from "@/ui/site/heading-section";
+import { SideProjectsSection } from "@/ui/site/side-projects-section";
+import { WorkExperienceSection } from "@/ui/site/work-experience-section";
+import { WritingSection } from "@/ui/site/writing-section";
 import { constructMetadata } from "@/utils/functions/construct-metadata";
 import { copyright } from "@/utils/functions/copyright";
 
@@ -12,20 +22,20 @@ export const metadata = constructMetadata({
 });
 
 export default async function Home() {
-  // const works = await getWorks();
-  // const profile = await getProfile();
-  // const projects = await getProjects();
-  // const articles = await getArticles();
-  // const education = await getEducation();
+  const works = await getWorks();
+  const profile = await getProfile();
+  const projects = await getProjects();
+  const articles = await getArticles();
+  const education = await getEducation();
 
   return (
     <PageLayout className="mt-24 space-y-6">
-      {/* <HeadingSection data={profile} /> */}
+      <HeadingSection data={profile} />
       <AboutSection />
-      {/* <WorkExperienceSection data={works} />
+      <WorkExperienceSection data={works} />
       <WritingSection data={articles} />
       <SideProjectsSection data={projects} />
-      <EducationSection data={education} /> */}
+      <EducationSection data={education} />
       <ContactSection />
       <Section className="mt-10 flex items-center justify-center">
         <span className="text-muted-foreground">{copyright()}</span>
