@@ -8,7 +8,7 @@ export async function getEducation() {
     cache: "force-cache",
     next: {
       revalidate,
-      tags: ["get-articles"],
+      tags: ["get-education"],
     },
   });
 
