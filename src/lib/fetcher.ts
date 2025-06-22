@@ -1,5 +1,3 @@
-const isServer = typeof window === "undefined";
-
 export async function fetcher<T = unknown>(
   input: RequestInfo | URL,
   init?: RequestInit,

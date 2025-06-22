@@ -1,10 +1,11 @@
-import { getArticle } from "@/actions/notion/get-articles";
-import { MarkdownBlock } from "@/components/markdown/markdown-block";
-import { transitions } from "@/registry/registry-animations";
+import { MarkdownBlock } from "@/components/markdown-block";
+import { Transmutation } from "@/components/transmulation";
+import { getArticle } from "@/http/notion/get-articles";
 import { PageLayout } from "@/ui/layout/page-layout";
 import { Section } from "@/ui/layout/section";
-import Transmutation from "@/ui/shared/transmulation";
 import { constructMetadata } from "@/utils/functions/construct-metadata";
+import { ArrowLeftIcon } from "lucide-react";
+import Link from "next/link";
 
 export async function generateMetadata({
   params,
@@ -29,16 +30,28 @@ export default async function Page({
   const { title, content, date } = await getArticle(slug);
 
   return (
-    <PageLayout className="relative mb-20 pt-12">
-      <Transmutation transition={transitions.goUp} className="space-y-12">
+    <PageLayout className="mt-32 space-y-6">
+      <Transmutation>
         <Section className="w-full space-y-4 py-0">
-          <h1 className="text-4xl font-bold">{title}</h1>
-          <span className="text-muted-foreground text-right text-xs whitespace-nowrap">
+          <h1 className="text-center text-4xl font-bold md:text-left">
+            {title}
+          </h1>
+          <span className="text-muted-foreground text-right text-sm whitespace-nowrap">
             ~ {date}
           </span>
         </Section>
-        <Section className="space-y-4 py-0">
+      </Transmutation>
+      <Transmutation time={0.6}>
+        <Section className="mt-6 space-y-4 py-0">
           <MarkdownBlock content={content} />
+          <div className="flex w-full justify-end">
+            <Link
+              href="/"
+              className="mt-8 flex items-center gap-1 transition-all hover:gap-1.5"
+            >
+              <ArrowLeftIcon size={16} /> Voltar ao início
+            </Link>
+          </div>
         </Section>
       </Transmutation>
     </PageLayout>

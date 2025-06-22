@@ -5,21 +5,21 @@ import { NextResponse } from "next/server";
 export async function GET() {
   try {
     const response = await notion.databases.query({
-      database_id: process.env.NOTION_DATABASE_PROJECTS_ID!,
+      database_id: process.env.NOTION_DATABASE_EDUCATION_ID!,
     });
 
-    const typedResponse = response.results as unknown as Notion.Projects[];
+    const typedResponse = response.results as unknown as Notion.Educations[];
 
-    const projects = typedResponse.map((project) => ({
-      type: project.properties?.type?.rich_text?.[0]?.plain_text,
+    const educations = typedResponse.map((project) => ({
+      date: project.properties?.date?.rich_text?.[0]?.plain_text,
       slug: project.properties?.slug?.rich_text?.[0]?.plain_text,
-      description: project.properties?.description?.rich_text?.[0]?.plain_text,
       url: project.properties?.url?.rich_text?.[0]?.plain_text,
+      location: project.properties?.location?.rich_text?.[0]?.plain_text,
       title: project.properties?.title?.title?.[0]?.plain_text,
     }));
 
-    return NextResponse.json(projects);
+    return NextResponse.json(educations);
   } catch (_) {
-    return new NextResponse("Erro ao buscar projetos", { status: 500 });
+    return new NextResponse("Erro ao buscar escolaridade", { status: 500 });
   }
 }

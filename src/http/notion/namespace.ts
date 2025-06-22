@@ -8,17 +8,25 @@ export namespace Notion {
   }
 
   export interface MappedProjects {
-    image: string;
+    type: string;
     slug: string;
     url: string;
+    description: string;
     title: string;
   }
 
-  export interface MappedTestimonials {
-    avatar: string;
-    name: string;
+  export interface MappedEducation {
     slug: string;
-    role: string;
+    date: string;
+    url: string;
+    title: string;
+    location: string;
+  }
+
+  export interface MappedWorks {
+    slug: string;
+    description: string;
+    date: string;
     title: string;
   }
 
@@ -40,8 +48,12 @@ export namespace Notion {
     properties: Project;
   }
 
-  export interface Testimonials extends Result {
-    properties: Testimonial;
+  export interface Works extends Result {
+    properties: Work;
+  }
+
+  export interface Educations extends Result {
+    properties: Education;
   }
 
   export interface Result {
@@ -126,7 +138,6 @@ export namespace Notion {
   // === Properties ===
 
   export interface Article {
-    media: Image;
     date: RichTextField;
     slug: RichTextField;
     description: RichTextField;
@@ -134,17 +145,25 @@ export namespace Notion {
   }
 
   export interface Project {
-    image: Image;
+    type: RichTextField;
     slug: RichTextField;
     url: RichTextField;
+    description: RichTextField;
     title: Title;
   }
 
-  export interface Testimonial {
-    avatar: Image;
-    name: RichTextField;
+  export interface Education {
     slug: RichTextField;
-    role: RichTextField;
+    date: RichTextField;
+    url: RichTextField;
+    title: Title;
+    location: RichTextField;
+  }
+
+  export interface Work {
+    slug: RichTextField;
+    description: RichTextField;
+    date: RichTextField;
     title: Title;
   }
 }

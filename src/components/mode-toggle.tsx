@@ -23,8 +23,7 @@ export function ModeToggle() {
           size="icon"
           aria-label="Toggle theme mode"
           className={cn(
-            "borderbg-neutral-50 flex h-7 w-auto items-center justify-between rounded-sm border-none !px-1.5",
-            "bg-accent",
+            "!bg-accent flex h-7 w-auto items-center justify-between rounded-sm border border-none !px-1.5",
           )}
         >
           <Sun className="h-[1.2rem] w-[1.2rem] scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90" />
