@@ -54,7 +54,7 @@ export function FeedTitle({
       <ArrowUpRightIcon
         size={12}
         strokeWidth={1}
-        className="-translate-x-1 translate-y-1 transition-all group-hover/feed-title:translate-0"
+        className="-translate-x-1 translate-y-1 transition-all group-hover/feed-title:translate-0 group-focus/feed-title:-translate-x-1 group-focus/feed-title:translate-y-1"
       />
     </NextLink.default>
   );
