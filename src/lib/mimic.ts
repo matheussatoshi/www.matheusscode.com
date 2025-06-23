@@ -50,5 +50,6 @@ export const mimic = {
     creator: "Feel Good Inc.",
     name: "Matheus Figueiredo",
     keywords: ["Vitrine", "Portfolio"],
+    url: "https://matheussfigueiredo.com",
   },
 };
