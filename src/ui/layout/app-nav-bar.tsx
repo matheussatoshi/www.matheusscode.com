@@ -26,7 +26,7 @@ export function AppNavBar() {
               href="/"
               className="flex items-center gap-1 transition-all hover:gap-1.5"
             >
-              <ArrowLeftIcon size={16} /> Voltar ao início
+              <ArrowLeftIcon size={16} /> Back
             </Link>
           )}
           <ModeToggle />
