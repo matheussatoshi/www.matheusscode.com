@@ -33,6 +33,12 @@ export default async function Page({
     <PageLayout className="mt-32 space-y-6">
       <Transmutation>
         <Section className="w-full space-y-4 py-0">
+              <Link
+                href="/"
+                className="flex items-center gap-1 transition-all hover:gap-1.5"
+              >
+                <ArrowLeftIcon size={16} /> Back to home
+              </Link>
           <h1 className="text-center text-4xl font-bold md:text-left">
             {title}
           </h1>
@@ -49,7 +55,7 @@ export default async function Page({
               href="/"
               className="mt-8 flex items-center gap-1 transition-all hover:gap-1.5"
             >
-              <ArrowLeftIcon size={16} /> Voltar ao início
+              <ArrowLeftIcon size={16} /> Back to home
             </Link>
           </div>
         </Section>

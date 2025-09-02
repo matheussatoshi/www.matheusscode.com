@@ -15,6 +15,7 @@ export async function GET() {
       slug: project.properties?.slug?.rich_text?.[0]?.plain_text,
       url: project.properties?.url?.rich_text?.[0]?.plain_text,
       location: project.properties?.location?.rich_text?.[0]?.plain_text,
+      certificate: project.properties?.certificate.files?.[0]?.file?.url,
       title: project.properties?.title?.title?.[0]?.plain_text,
     }));
 

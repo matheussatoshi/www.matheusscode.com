@@ -1,9 +1,7 @@
 "use client";
 
-import { ModeToggle } from "@/components/mode-toggle";
-import { cn } from "@/lib/cn";
-import { ArrowLeftIcon } from "lucide-react";
-import Link from "next/link";
+import { AnimatedThemeToggler } from "@/components/magicui/animated-theme-toggler";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Transmutation } from "../../components/transmulation";
 
@@ -13,23 +11,15 @@ export function AppNavBar() {
   const IS_HOME_PATH = pathname === "/";
 
   return (
-    <header className="bg-background/50 fixed top-0 w-full backdrop-blur-xs md:z-20">
+    <header className="fixed top-0 w-full md:z-20">
       <Transmutation>
         <div
-          className={cn(
-            "mx-auto flex w-full max-w-2xl items-center justify-between py-3 pr-2 pl-6 transition-all md:py-4",
-            IS_HOME_PATH && "justify-end",
-          )}
+          className="mx-auto flex w-full items-center justify-between py-3 px-6 transition-all md:py-4"
         >
-          {!IS_HOME_PATH && (
-            <Link
-              href="/"
-              className="flex items-center gap-1 transition-all hover:gap-1.5"
-            >
-              <ArrowLeftIcon size={16} /> Back
-            </Link>
-          )}
-          <ModeToggle />
+          <Image src='/mf-signature.svg' alt='MF Rubric Signature' width={60} height={60} />
+          <div className="flex items-center gap-4">
+            <AnimatedThemeToggler />
+          </div>
         </div>
       </Transmutation>
     </header>

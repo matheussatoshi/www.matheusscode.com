@@ -5,7 +5,7 @@ import { Notion } from "./namespace";
 export async function getWorks() {
   const response = await fetcher<Notion.MappedWorks[]>("/works", {
     method: "GET",
-    cache: "force-cache",
+     cache: "force-cache",
     next: {
       revalidate,
       tags: ["get-works"],

@@ -137,4 +137,25 @@
   br {
     @apply hidden md:block;
   }
+
+   *::-webkit-scrollbar {
+    @apply w-2 h-1.5;
+  }
+
+  *::-webkit-scrollbar-track {
+    @apply bg-accent;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    @apply bg-primary ;
+  }
+
+  *::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary/90;
+  }
+}
+
+::view-transition-old(root), ::view-transition-new(root) {
+    animation: none;
+    mix-blend-mode: normal;
 }

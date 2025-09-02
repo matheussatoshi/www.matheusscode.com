@@ -18,8 +18,8 @@ export function HeadingSection({ data }: { data: Github.Profile }) {
             <p className="text-muted-foreground text-sm font-normal">
               Software Engineer in Manaus
             </p>
-            <span className="bg-muted-foreground/5 dark:bg-muted-foreground/20 max-w-auto text-muted-foreground hover:bg-accent mt-1.5 w-fit rounded-full px-2.5 py-0.5 text-center text-xs shadow-xs">
-              matheussfigueiredo.com
+            <span className="mt-2.5 bg-muted-foreground/5 dark:bg-muted-foreground/20 max-w-auto text-muted-foreground hover:bg-accent w-fit rounded-full px-2.5 py-0.5 text-center text-xs shadow-xs">
+              letmat.contact@gmail.com
             </span>
           </div>
         </div>

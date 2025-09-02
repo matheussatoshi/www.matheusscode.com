@@ -1,5 +1,6 @@
 import { ThemeProvider } from "@/providers/theme-provider";
 import { AppNavBar } from "@/ui/layout/app-nav-bar";
+import { Footer } from "@/ui/layout/footer";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Open_Sans } from "next/font/google";
@@ -17,6 +18,7 @@ export default function RootLayout({ children }: React.PropsWithChildren) {
         <ThemeProvider>
           <AppNavBar />
           {children}
+          <Footer/>
         </ThemeProvider>
         <Analytics />
         <SpeedInsights />

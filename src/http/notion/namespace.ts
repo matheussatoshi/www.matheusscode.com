@@ -20,6 +20,7 @@ export namespace Notion {
     date: string;
     url: string;
     title: string;
+    certificate: string;
     location: string;
   }
 
@@ -157,6 +158,7 @@ export namespace Notion {
     date: RichTextField;
     url: RichTextField;
     title: Title;
+    certificate: Image
     location: RichTextField;
   }
 

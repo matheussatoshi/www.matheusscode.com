@@ -1,3 +1,4 @@
+import { ImagePreviewDialog } from "@/components/image-preview-dialog";
 import { Transmutation } from "@/components/transmulation";
 import {
   FeedCard,
@@ -24,6 +25,12 @@ export function EducationSection({ data }: { data: Notion.MappedEducation[] }) {
                 <FeedDescription className="text-foreground/75 font-normal">
                   {education.location}
                 </FeedDescription>
+                {education.certificate && (
+                    <ImagePreviewDialog
+                      src={education.certificate}
+                      alt={education.title}
+                    />
+                )}
               </FeedContent>
             </FeedCard>
           ))}
