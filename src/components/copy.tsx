@@ -1,36 +1,36 @@
-"use client";
+"use client"
 
-import { cn } from "@/lib/cn";
-import { CheckIcon, CopyIcon } from "lucide-react";
-import { useState } from "react";
-import { Button } from "./ui/button";
+import { CheckIcon, CopyIcon } from "lucide-react"
+import { useState } from "react"
+import { cn } from "@/lib/cn"
+import { Button } from "./ui/button"
 
 export default function Copy({
   content,
   className,
 }: {
-  content: string;
-  className?: string;
+  content: string
+  className?: string
 }) {
-  const [isCopied, setIsCopied] = useState(false);
+  const [isCopied, setIsCopied] = useState(false)
 
   async function handleCopy() {
-    await navigator.clipboard.writeText(content);
-    setIsCopied(true);
+    await navigator.clipboard.writeText(content)
+    setIsCopied(true)
 
     setTimeout(() => {
-      setIsCopied(false);
-    }, 2000);
+      setIsCopied(false)
+    }, 2000)
   }
 
   return (
     <Button
-      size="icon"
       className={cn(
-        "bg-background text-primary hover:bg-background/50 size-7 rounded-md active:scale-95",
-        className,
+        "size-7 rounded-md bg-background text-primary hover:bg-background/50 active:scale-95",
+        className
       )}
       onClick={handleCopy}
+      size="icon"
     >
       {isCopied ? (
         <CheckIcon className="size-4" />
@@ -38,5 +38,5 @@ export default function Copy({
         <CopyIcon className="size-4" />
       )}
     </Button>
-  );
+  )
 }

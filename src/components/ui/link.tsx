@@ -1,7 +1,6 @@
-import { VariantProps } from "class-variance-authority";
-import { LinkProps } from "next/link";
-import { buttonVariants } from "./button";
-import NextLink from "next/link";
+import type { VariantProps } from "class-variance-authority"
+import NextLink, { type LinkProps } from "next/link"
+import { buttonVariants } from "./button"
 
 export function Link({
   variant = "default",
@@ -14,9 +13,9 @@ export function Link({
   VariantProps<typeof buttonVariants>) {
   return (
     <NextLink
-      href={href}
       className={buttonVariants({ variant, size, className })}
+      href={href}
       {...props}
     />
-  );
+  )
 }

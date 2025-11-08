@@ -1,6 +1,6 @@
-import { fetcher } from "@/lib/fetcher";
-import { revalidate } from "@/registry/registry-middleware";
-import { Notion } from "./namespace";
+import { fetcher } from "@/lib/fetcher"
+import { revalidate } from "@/registry/registry-middleware"
+import type { Notion } from "./namespace"
 
 export async function getArticles() {
   const response = await fetcher<Notion.MappedArticles[]>("/writings", {
@@ -10,9 +10,9 @@ export async function getArticles() {
       revalidate,
       tags: ["get-articles"],
     },
-  });
+  })
 
-  return response;
+  return response
 }
 
 export async function getArticle(slug: string) {
@@ -25,8 +25,8 @@ export async function getArticle(slug: string) {
         revalidate,
         tags: ["get-article"],
       },
-    },
-  );
+    }
+  )
 
-  return response;
+  return response
 }

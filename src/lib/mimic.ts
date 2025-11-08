@@ -1,11 +1,11 @@
-import { copyright } from "@/utils/functions/copyright";
 import {
   GithubIcon,
   InstagramIcon,
   LinkedinIcon,
   XIcon,
   YoutubeIcon,
-} from "lucide-react";
+} from "lucide-react"
+import { copyright } from "@/utils/functions/copyright"
 
 export const mimic = {
   socialLinks: [
@@ -52,4 +52,4 @@ export const mimic = {
     keywords: ["Vitrine", "Portfolio"],
     url: "https://matheussfigueiredo.com",
   },
-};
+}

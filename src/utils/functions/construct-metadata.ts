@@ -1,5 +1,5 @@
-import { mimic } from "@/lib/mimic";
-import { Metadata } from "next";
+import type { Metadata } from "next"
+import { mimic } from "@/lib/mimic"
 
 export const constructMetadata = ({
   title,
@@ -34,7 +34,7 @@ export const constructMetadata = ({
 }: Metadata): Metadata => {
   const MIXED_KEYWORDS = Array.isArray(keywords)
     ? [...keywords, ...mimic.metadata.keywords]
-    : mimic.metadata.keywords;
+    : mimic.metadata.keywords
 
   return {
     title,
@@ -62,7 +62,7 @@ export const constructMetadata = ({
       },
     },
     applicationName: mimic.metadata.name,
-    //@ts-ignore
+    //@ts-expect-error
     appleWebApp: {
       title,
       capable: true,
@@ -72,5 +72,5 @@ export const constructMetadata = ({
     referrer,
     creator,
     ...rest,
-  };
-};
+  }
+}

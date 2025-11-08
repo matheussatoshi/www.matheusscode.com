@@ -1,7 +1,7 @@
-import { Transmutation } from "@/components/transmulation";
-import { UserAvatar } from "@/components/user-avatar";
-import { Github } from "@/http/github/namespace";
-import { Section } from "../layout/section";
+import { Transmutation } from "@/components/transmulation"
+import { UserAvatar } from "@/components/user-avatar"
+import type { Github } from "@/http/github/namespace"
+import { Section } from "../layout/section"
 
 export function HeadingSection({ data }: { data: Github.Profile }) {
   return (
@@ -9,21 +9,21 @@ export function HeadingSection({ data }: { data: Github.Profile }) {
       <Section className="mt-8">
         <div className="flex w-full items-center gap-4">
           <UserAvatar
-            src={data.avatar_url}
             alt={data.name}
             className="size-24"
+            src={data.avatar_url}
           />
           <div className="flex w-full flex-col">
-            <h1 className="text-xl leading-7 font-normal">{data.name}</h1>
-            <p className="text-muted-foreground text-sm font-normal">
+            <h1 className="font-normal text-xl leading-7">{data.name}</h1>
+            <p className="font-normal text-muted-foreground text-sm">
               Software Engineer in Manaus
             </p>
-            <span className="mt-2.5 bg-muted-foreground/5 dark:bg-muted-foreground/20 max-w-auto text-muted-foreground hover:bg-accent w-fit rounded-full px-2.5 py-0.5 text-center text-xs shadow-xs">
+            <span className="mt-2.5 w-fit max-w-auto rounded-full bg-muted-foreground/5 px-2.5 py-0.5 text-center text-muted-foreground text-xs shadow-xs hover:bg-accent dark:bg-muted-foreground/20">
               letmat.contact@gmail.com
             </span>
           </div>
         </div>
       </Section>
     </Transmutation>
-  );
+  )
 }

@@ -1,5 +1,5 @@
-import ReactMarkdown from "react-markdown";
-import Pre from "./pre";
+import ReactMarkdown from "react-markdown"
+import Pre from "./pre"
 
 export function MarkdownBlock({ content }: { content: string }) {
   return (
@@ -7,7 +7,7 @@ export function MarkdownBlock({ content }: { content: string }) {
       components={{
         h2: ({ ...props }) => (
           <h2
-            className="border-input mt-12 mb-4 border-b pb-3 text-2xl font-semibold first:mt-0"
+            className="mt-12 mb-4 border-input border-b pb-3 font-semibold text-2xl first:mt-0"
             {...props}
           />
         ),
@@ -15,14 +15,12 @@ export function MarkdownBlock({ content }: { content: string }) {
           <p className="text-muted-foreground text-sm" {...props} />
         ),
         strong: ({ ...props }) => (
-          <strong className="text-primary text-sm font-medium" {...props} />
+          <strong className="font-medium text-primary text-sm" {...props} />
         ),
-        pre: ({ ...props }) => {
-          return <Pre {...props} />;
-        },
+        pre: ({ ...props }) => <Pre {...props} />,
       }}
     >
       {content}
     </ReactMarkdown>
-  );
+  )
 }

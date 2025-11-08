@@ -1,4 +1,4 @@
-import { Transmutation } from "@/components/transmulation";
+import { Transmutation } from "@/components/transmulation"
 import {
   FeedCard,
   FeedContent,
@@ -6,14 +6,14 @@ import {
   FeedLabel,
   FeedList,
   FeedTitle,
-} from "@/components/ui/feed";
-import { Notion } from "@/http/notion/namespace";
-import { Section } from "../layout/section";
+} from "@/components/ui/feed"
+import type { Notion } from "@/http/notion/namespace"
+import { Section } from "../layout/section"
 
 export function SideProjectsSection({
   data,
 }: {
-  data: Notion.MappedProjects[];
+  data: Notion.MappedProjects[]
 }) {
   return (
     <Transmutation time={1.2}>
@@ -36,5 +36,5 @@ export function SideProjectsSection({
         </FeedList>
       </Section>
     </Transmutation>
-  );
+  )
 }

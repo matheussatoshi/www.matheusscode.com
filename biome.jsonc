@@ -1,0 +1,23 @@
+{
+  "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+  "extends": ["ultracite/core", "ultracite/next"],
+  "javascript": {
+    "formatter": {
+      "semicolons": "asNeeded",
+      "indentWidth": 2,
+      "indentStyle": "space"
+    }
+  },
+  "linter": {
+    "rules": {
+      "style": {
+        "noNamespace": "off",
+        "noNonNullAssertion": "off",
+        "useConsistentTypeDefinitions": "off"
+      },
+      "performance": {
+        "noNamespaceImport": "off"
+      }
+    }
+  }
+}

@@ -1,3 +1,5 @@
+/** biome-ignore-all lint/correctness/noUnknownTypeSelector: <intentionally using experimental pseudo-elements> */
+
 @import "tailwindcss";
 @import "tw-animate-css";
 
@@ -47,6 +49,7 @@
     0% {
       opacity: 1;
     }
+
     100% {
       opacity: 0.15;
     }
@@ -126,6 +129,7 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   html {
     @apply h-full;
   }
@@ -138,7 +142,7 @@
     @apply hidden md:block;
   }
 
-   *::-webkit-scrollbar {
+  *::-webkit-scrollbar {
     @apply w-2 h-1.5;
   }
 
@@ -147,7 +151,7 @@
   }
 
   *::-webkit-scrollbar-thumb {
-    @apply bg-primary ;
+    @apply bg-primary;
   }
 
   *::-webkit-scrollbar-thumb:hover {
@@ -155,7 +159,8 @@
   }
 }
 
-::view-transition-old(root), ::view-transition-new(root) {
-    animation: none;
-    mix-blend-mode: normal;
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
 }

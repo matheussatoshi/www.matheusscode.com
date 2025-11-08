@@ -1,6 +1,6 @@
-import { GITHUB_URL } from "@/registry/registry-domains";
-import { revalidate } from "@/registry/registry-middleware";
-import { Github } from "./namespace";
+import { GITHUB_URL } from "@/registry/registry-domains"
+import { revalidate } from "@/registry/registry-middleware"
+import type { Github } from "./namespace"
 
 export async function getProfile() {
   const response = await fetch(
@@ -11,10 +11,10 @@ export async function getProfile() {
         revalidate,
         tags: ["get-profile"],
       },
-    },
-  );
+    }
+  )
 
-  const result = await response.json();
+  const result = await response.json()
 
-  return result as Github.Profile;
+  return result as Github.Profile
 }

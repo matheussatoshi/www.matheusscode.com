@@ -1,6 +1,6 @@
-import { fetcher } from "@/lib/fetcher";
-import { revalidate } from "@/registry/registry-middleware";
-import { Notion } from "./namespace";
+import { fetcher } from "@/lib/fetcher"
+import { revalidate } from "@/registry/registry-middleware"
+import type { Notion } from "./namespace"
 
 export async function getProjects() {
   const response = await fetcher<Notion.MappedProjects[]>("/projects", {
@@ -10,7 +10,7 @@ export async function getProjects() {
       revalidate,
       tags: ["get-projects"],
     },
-  });
+  })
 
-  return response;
+  return response
 }

@@ -1,13 +1,13 @@
-import { Transmutation } from "@/components/transmulation";
+import { Transmutation } from "@/components/transmulation"
 import {
   FeedCard,
   FeedContent,
   FeedLabel,
   FeedList,
   FeedTitle,
-} from "@/components/ui/feed";
-import { mimic } from "@/lib/mimic";
-import { Section } from "../layout/section";
+} from "@/components/ui/feed"
+import { mimic } from "@/lib/mimic"
+import { Section } from "../layout/section"
 
 export function ContactSection() {
   return (
@@ -17,8 +17,8 @@ export function ContactSection() {
         <FeedList className="mt-6 flex w-full flex-col space-y-6">
           {mimic.socialLinks.map((link) => (
             <FeedCard
-              key={link.name.toLowerCase()}
               className="inline-flex w-full items-start"
+              key={link.name.toLowerCase()}
             >
               <FeedLabel>
                 <span>{link.name}</span>
@@ -37,5 +37,5 @@ export function ContactSection() {
         </FeedList>
       </Section>
     </Transmutation>
-  );
+  )
 }

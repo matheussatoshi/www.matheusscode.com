@@ -1,6 +1,6 @@
-import { fetcher } from "@/lib/fetcher";
-import { revalidate } from "@/registry/registry-middleware";
-import { Notion } from "./namespace";
+import { fetcher } from "@/lib/fetcher"
+import { revalidate } from "@/registry/registry-middleware"
+import type { Notion } from "./namespace"
 
 export async function getEducation() {
   const response = await fetcher<Notion.MappedEducation[]>("/education", {
@@ -10,7 +10,7 @@ export async function getEducation() {
       revalidate,
       tags: ["get-education"],
     },
-  });
+  })
 
-  return response;
+  return response
 }

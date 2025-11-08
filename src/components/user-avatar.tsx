@@ -1,7 +1,7 @@
-import { cn } from "@/lib/cn";
-import { shortName } from "@/utils/functions/short-name";
-import { UserRoundXIcon } from "lucide-react";
-import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
+import { UserRoundXIcon } from "lucide-react"
+import { cn } from "@/lib/cn"
+import { shortName } from "@/utils/functions/short-name"
+import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar"
 
 export function UserAvatar({
   src,
@@ -9,29 +9,29 @@ export function UserAvatar({
   className,
   ...props
 }: React.ComponentProps<typeof Avatar> & {
-  src?: string;
-  alt: string;
+  src?: string
+  alt: string
 }) {
-  if (!alt && !src) {
+  if (!(alt || src)) {
     return (
       <Avatar
-        data-testid="avatar-root"
         className={cn("bg-accent", className)}
+        data-testid="avatar-root"
         {...props}
       >
         <UserRoundXIcon data-testid="avatar-icon" />
       </Avatar>
-    );
+    )
   }
 
   return (
     <Avatar
-      data-testid="user-avatar"
       className={cn("bg-accent", className)}
+      data-testid="user-avatar"
       {...props}
     >
-      <AvatarImage src={src} alt={alt} />
+      <AvatarImage alt={alt} src={src} />
       <AvatarFallback>{shortName(alt)}</AvatarFallback>
     </Avatar>
-  );
+  )
 }

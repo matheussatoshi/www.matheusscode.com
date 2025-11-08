@@ -1,4 +1,4 @@
-import { cn } from "@/lib/cn";
+import { cn } from "@/lib/cn"
 
 export function Section({
   className,
@@ -9,5 +9,5 @@ export function Section({
       className={cn("mx-auto w-full max-w-[635px] space-y-1.5 p-4", className)}
       {...props}
     />
-  );
+  )
 }

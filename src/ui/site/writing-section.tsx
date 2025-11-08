@@ -1,4 +1,4 @@
-import { Transmutation } from "@/components/transmulation";
+import { Transmutation } from "@/components/transmulation"
 import {
   FeedCard,
   FeedContent,
@@ -6,10 +6,10 @@ import {
   FeedLabel,
   FeedList,
   FeedTitle,
-} from "@/components/ui/feed";
-import { Notion } from "@/http/notion/namespace";
-import { truncate } from "@/utils/functions/truncate";
-import { Section } from "../layout/section";
+} from "@/components/ui/feed"
+import type { Notion } from "@/http/notion/namespace"
+import { truncate } from "@/utils/functions/truncate"
+import { Section } from "../layout/section"
 
 export function WritingSection({ data }: { data: Notion.MappedArticles[] }) {
   return (
@@ -21,7 +21,7 @@ export function WritingSection({ data }: { data: Notion.MappedArticles[] }) {
             <FeedCard key={article.slug}>
               <FeedLabel>{article.date}</FeedLabel>
               <FeedContent>
-                <FeedTitle target="_self" href={`/writings/${article.slug}`}>
+                <FeedTitle href={`/writings/${article.slug}`} target="_self">
                   {article.title}
                 </FeedTitle>
                 <FeedDescription>
@@ -33,5 +33,5 @@ export function WritingSection({ data }: { data: Notion.MappedArticles[] }) {
         </FeedList>
       </Section>
     </Transmutation>
-  );
+  )
 }
