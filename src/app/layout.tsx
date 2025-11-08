@@ -4,7 +4,6 @@ import { Open_Sans } from "next/font/google"
 import { ThemeProvider } from "@/providers/theme-provider"
 import { AppNavBar } from "@/ui/layout/app-nav-bar"
 import { Footer } from "@/ui/layout/footer"
-//@ts-expect-error
 import "./globals.css"
 
 const openSans = Open_Sans({

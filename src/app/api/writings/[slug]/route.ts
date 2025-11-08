@@ -9,6 +9,7 @@ export async function GET(
 ) {
   const { slug } = await params
 
+  // @ts-expect-error: Notion SDK types are not compatible with current query response
   const response = await notion.databases.query({
     database_id: process.env.NOTION_DATABASE_ARTICLES_ID!,
     filter: {
